@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-"""Parse Divinumofficium's calendar tabulae into feast object."""
+"""Parse Divinumofficium's calendar tabulae into feast objects."""
 
 from pathlib import Path
 

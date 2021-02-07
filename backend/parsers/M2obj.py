@@ -1,3 +1,5 @@
+"""Parse divinumofficiums martyrology files into Martyrology objects."""
+
 import re
 from pathlib import Path
 from typing import Union

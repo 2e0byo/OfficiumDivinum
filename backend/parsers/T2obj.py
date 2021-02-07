@@ -1,4 +1,4 @@
-"""Parser for temporal files."""
+"""Parse Divinumofficium's Temporal files into Feast objects."""
 import re
 from pathlib import Path
 
@@ -6,8 +6,19 @@ from ..DSL import days, months, ordinals, specials
 from ..objects import Date, Feast, Octave, Rank
 
 
-def parse_DO_sections(lines: list):
-    """Parse DO files into lists per section."""
+def parse_DO_sections(lines: list) -> list:
+    """
+    Parse DO files into lists per section.
+
+    Parameters
+    ----------
+    lines: list : lines to break into sections.
+
+
+    Returns
+    -------
+    A list of sections.
+    """
     sections = {}
     current_section = None
     content = []
@@ -33,8 +44,21 @@ def parse_DO_sections(lines: list):
     return sections
 
 
-def parse_file(fn: Path, calendar):
-    """Parse provided file."""
+def parse_file(fn: Path, calendar: str) -> Feast:
+    """
+    Parse provided file.
+
+    Parameters
+    ----------
+    fn: Path : File to parse.
+
+    calendar : str: Calendar to use (mainly for naming at this stage).
+
+
+    Returns
+    -------
+    A Feast object represeting the day.
+    """
     try:
         after, day = fn.stem.split("-")
     except ValueError:

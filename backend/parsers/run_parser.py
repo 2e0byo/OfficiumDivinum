@@ -1,30 +1,111 @@
-#!/usr/bin/python3
+"""
+Helper functions to run particular parsers on some or all files.
+
+These are provided since sometimes we read a single file and sometimes
+we must read many (with a glob).  Parsers only handle single files, to
+aid standardisation.
+
+These functions print their output to stdout, for redirecting to a
+file.  They also return it.
+"""
 
 from pathlib import Path
+from typing import List, Union
 
 from jsonpickle import encode
 
-from ..objects import Martyrology
+from ..objects import Feast, Martyrology
 from . import K2obj, M2obj, T2obj
 
 
-def sanctoral_to_json(fn: Path, calendar: str):
+def sanctoral_to_json(fn: Path, calendar: str) -> str:
+    """
+
+    Parameters
+    ----------
+    fn : Path : File to parse.
+
+    calendar : str : Calendar to use.
+
+    Returns
+    -------
+    str
+       A Json str.
+
+    """
     days = [K2obj.parse_file(fn, calendar)]
-    print(encode(days, indent=2))
+    days = encode(days, indent=2)
+    print(days)
+    return days
 
 
-def martyrology_to_json(fn: Path):
+def martyrology_to_json(fn: Path) -> str:
+    """
+
+    Parameters
+    ----------
+    fn : Path : File to parse.
+
+
+
+    Returns
+    -------
+    str
+       A Json str.
+
+    """
     day = M2obj.parse_file(fn)
-    print(encode(day, indent=2))
+    day = encode(day, indent=2)
+    print(day)
+    return day
 
 
-def temporal_to_json(fn: Path, calendar: str):
+def temporal_to_json(fn: Path, calendar: str) -> str:
+    """
+
+    Parameters
+    ----------
+    fn : Path : The file to parse.
+
+    calendar : str : The Calendar to use.
+
+
+    Returns
+    -------
+    str
+       A Json str.
+
+    """
     day = T2obj.parse_file(fn, calendar)
-    print(encode(day, indent=2))
+    day = encode(day, indent=2)
+    print(day)
+    return day
 
 
-def pokemon(lang, calendar, root):
-    """Catch them all!"""
+def pokemon(
+    lang: str, calendar: str, root: str
+) -> Union[List[Feast], List[Feast], List[Martyrology]]:
+    """
+    Catch them all!
+
+    Get all the relevant data for a particular calendar from a
+    supplied root (which should be a cloned divinumofficium
+    repository's web directory.)
+
+    Parameters
+    ----------
+
+    lang: str : The language, e.g. `Latin`.
+
+    calendar: str : The calendar.
+
+    root: str : The root, as a string.
+
+    Returns
+    -------
+    List
+        Lists of Feast and Martyrology objects.
+    """
     root = Path(f"{root}/{lang}").expanduser()
     sanctoral = K2obj.parse_file(
         root / f"Tabulae/K{calendar}.txt",
@@ -45,6 +126,25 @@ def pokemon(lang, calendar, root):
 
 
 def pokemon_to_json(lang, calendar, root):
+    """
+    Catch them all!  (In json.)
+
+    Like `pokemon`, but return encoded objects.
+
+    Parameters
+    ----------
+
+    lang: str : The language, e.g. `Latin`.
+
+    calendar: str : The calendar.
+
+    root: str : The root, as a string.
+
+    Returns
+    -------
+    str
+       Json str.
+    """
     things = pokemon(lang, calendar, root)
     return (encode(i, indent=2) for i in things)
 
