@@ -1,8 +1,9 @@
+.. _rationale:
 Rationale
 =========
 
 History: Divinumofficium
-========================
+------------------------
 
 Divinumofficium is an incredible achievement: it presents the complete
 divine office and missal of the Roman rite from its Tridentine form
@@ -44,7 +45,7 @@ divinumofficium project (as well as releasing everything over which
 they had copyright under the MIT License).
 
 History: OfficiumDivinum
-========================
+------------------------
 
 OfficiumDivinum came to be when, having started an attempt to generate
 LaTeX booklets from divinumofficium and given up trying to work out
@@ -70,3 +71,5 @@ less readable) ways to build this.
 
 We also determined that OfficiumDivinum should be *heavily*
 documented, and have a fully-functional API.
+
+
