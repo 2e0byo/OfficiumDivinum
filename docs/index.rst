@@ -3,12 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Officium Divinum's documentation!
-============================================
+*Officium Divinum*: an object-oriented divinumofficium
+======================================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+*Officium Divinum* is an object-oriented re-write of divinum
+officium.  For more information see 	     
 
 
 
