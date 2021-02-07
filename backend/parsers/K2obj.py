@@ -14,7 +14,21 @@ from ..objects import (
 )
 
 
-def parse_line(line: str, calendar) -> Feast:
+def parse_line(line: str, calendar: str) -> Feast:
+    """
+    Parse a line of a divinumofficium calendar file.
+
+    Parameters
+    ----------
+    line: str : The line to parse.
+
+    calendar: str : The Calendar to use (for feast names, etc.)
+
+
+    Returns
+    -------
+    A Feast object representing the day.
+    """
     line = line.strip()
     if line.startswith("*"):
         return None
@@ -70,6 +84,20 @@ def parse_line(line: str, calendar) -> Feast:
 
 
 def parse_file(fn: Path, calendar: str):
+    """
+    Parse a divinumofficium caldnear file.
+
+    Parameters
+    ----------
+    fn: Path : The file to parse.
+
+    calendar: str : The calendar to use to generate feast names, etc.
+
+
+    Returns
+    -------
+    A list of Feast objects.
+    """
     year = []
 
     with fn.open() as f:
@@ -83,5 +111,6 @@ def parse_file(fn: Path, calendar: str):
 
 if __name__ == "__main__":
     print(
-        "Do not run this parser directly.  A helper script is ../run_parser.py, or use it in a python shell"
+        "Do not run this parser directly."
+        "A helper script is ../run_parser.py, or use it in a python shell"
     )
