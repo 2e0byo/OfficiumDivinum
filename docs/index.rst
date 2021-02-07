@@ -12,6 +12,7 @@
 
    rationale
    contributing
+   source/modules
 
 *OfficiumDivinum* is an object-oriented re-write of divinum
 officium.  For why we attempted this, see :doc:`rationale`.
@@ -45,7 +46,7 @@ It endeavours:
 * To encourage the public and private reciting, singing and study of
   the Divine Office.
 
-If you would like to contribute, see :doc:`Contributing` to get
+If you would like to contribute, see :doc:`contributing` to get
 started.  
 
 Indices and tables
