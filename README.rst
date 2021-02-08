@@ -72,6 +72,11 @@ repository, and then install in ‘development mode’::
   # . venv/bin/activate.fish # if using fish
   python -m pip install -e .
 
+To run the development server, run::
+  export FLASK_APP=src/api.py
+  export FLASK_ENV=developemnt
+  flask run
+
 
 Documentation
 =============
