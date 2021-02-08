@@ -173,7 +173,7 @@ class Feast:
     calendars is unsupported and will probably return nonsense.
 
     Multiple Feast objects can meaningfully exist for a given calendar
-    day, if they have different `Type`s.  (I.e. tempore/sanctorum.)
+    day, if they have different `Type` s.  (I.e. tempore/sanctorum.)
     This might be a design decision worth re-thinking down the line.
 
     Parameters
