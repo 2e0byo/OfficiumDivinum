@@ -1,11 +1,11 @@
 officiumdivinum.objects package
-=======================
+===============================
 
 Submodules
 ----------
 
 officiumdivinum.objects.datastructures module
--------------------------------------
+---------------------------------------------
 
 .. automodule:: officiumdivinum.objects.datastructures
    :members:
@@ -13,7 +13,7 @@ officiumdivinum.objects.datastructures module
    :show-inheritance:
 
 officiumdivinum.objects.divinumofficium\_structures module
---------------------------------------------------
+----------------------------------------------------------
 
 .. automodule:: officiumdivinum.objects.divinumofficium_structures
    :members:
@@ -21,7 +21,7 @@ officiumdivinum.objects.divinumofficium\_structures module
    :show-inheritance:
 
 officiumdivinum.objects.html\_render module
------------------------------------
+-------------------------------------------
 
 .. automodule:: officiumdivinum.objects.html_render
    :members:

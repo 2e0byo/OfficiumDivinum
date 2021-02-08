@@ -10,12 +10,13 @@ Note that if you just want to edit *content*, you should edit it
 directly in our format, not jig the parser.  We make no effort to have
 our internal data generateable from divinumofficium sources: we just
 used them at the beginning.
+===============================
 
 Submodules
 ----------
 
 officiumdivinum.parsers.K2obj module
-----------------------------
+------------------------------------
 
 .. automodule:: officiumdivinum.parsers.K2obj
    :members:
@@ -23,7 +24,7 @@ officiumdivinum.parsers.K2obj module
    :show-inheritance:
 
 officiumdivinum.parsers.M2obj module
-----------------------------
+------------------------------------
 
 .. automodule:: officiumdivinum.parsers.M2obj
    :members:
@@ -31,7 +32,7 @@ officiumdivinum.parsers.M2obj module
    :show-inheritance:
 
 officiumdivinum.parsers.T2obj module
-----------------------------
+------------------------------------
 
 .. automodule:: officiumdivinum.parsers.T2obj
    :members:
@@ -39,7 +40,7 @@ officiumdivinum.parsers.T2obj module
    :show-inheritance:
 
 officiumdivinum.parsers.run\_parser module
-----------------------------------
+------------------------------------------
 
 .. automodule:: officiumdivinum.parsers.run_parser
    :members:

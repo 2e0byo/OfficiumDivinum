@@ -1,11 +1,11 @@
 officiumdivinum.DSL package
-===================
+===========================
 
 Submodules
 ----------
 
 officiumdivinum.DSL.dsl\_parser module
-------------------------------
+--------------------------------------
 
 .. automodule:: officiumdivinum.DSL.dsl_parser
    :members:
@@ -13,7 +13,7 @@ officiumdivinum.DSL.dsl\_parser module
    :show-inheritance:
 
 officiumdivinum.DSL.util module
------------------------
+-------------------------------
 
 .. automodule:: officiumdivinum.DSL.util
    :members:

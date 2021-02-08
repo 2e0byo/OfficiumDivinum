@@ -1,11 +1,11 @@
 officiumdivinum.bible package
-=====================
+=============================
 
 Submodules
 ----------
 
 officiumdivinum.bible.bible module
---------------------------
+----------------------------------
 
 .. automodule:: officiumdivinum.bible.bible
    :members:
@@ -13,7 +13,7 @@ officiumdivinum.bible.bible module
    :show-inheritance:
 
 officiumdivinum.bible.vulgate module
-----------------------------
+------------------------------------
 
 .. automodule:: officiumdivinum.bible.vulgate
    :members:

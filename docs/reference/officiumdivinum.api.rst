@@ -1,11 +1,11 @@
 officiumdivinum.api package
-===================
+===========================
 
 Submodules
 ----------
 
 officiumdivinum.api.api module
-----------------------
+------------------------------
 
 .. automodule:: officiumdivinum.api.api
    :members:
@@ -13,7 +13,7 @@ officiumdivinum.api.api module
    :show-inheritance:
 
 officiumdivinum.api.bible module
-------------------------
+--------------------------------
 
 .. automodule:: officiumdivinum.api.bible
    :members:
@@ -21,7 +21,7 @@ officiumdivinum.api.bible module
    :show-inheritance:
 
 officiumdivinum.api.database module
----------------------------
+-----------------------------------
 
 .. automodule:: officiumdivinum.api.database
    :members:
@@ -29,7 +29,7 @@ officiumdivinum.api.database module
    :show-inheritance:
 
 officiumdivinum.api.errors module
--------------------------
+---------------------------------
 
 .. automodule:: officiumdivinum.api.errors
    :members:
@@ -37,7 +37,7 @@ officiumdivinum.api.errors module
    :show-inheritance:
 
 officiumdivinum.api.martyrology module
-------------------------------
+--------------------------------------
 
 .. automodule:: officiumdivinum.api.martyrology
    :members:
@@ -45,7 +45,7 @@ officiumdivinum.api.martyrology module
    :show-inheritance:
 
 officiumdivinum.api.test\_api module
-----------------------------
+------------------------------------
 
 .. automodule:: officiumdivinum.api.test_api
    :members:
@@ -53,7 +53,7 @@ officiumdivinum.api.test\_api module
    :show-inheritance:
 
 officiumdivinum.api.update\_server module
----------------------------------
+-----------------------------------------
 
 .. automodule:: officiumdivinum.api.update_server
    :members:
