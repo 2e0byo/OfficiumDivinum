@@ -4,8 +4,13 @@ import re
 from pathlib import Path
 from typing import Union
 
-from ..DSL import days, months, ordinals, specials
-from ..objects import Date, Martyrology, MartyrologyInfo
+from ..DSL import days
+from ..DSL import months
+from ..DSL import ordinals
+from ..DSL import specials
+from ..objects import Date
+from ..objects import Martyrology
+from ..objects import MartyrologyInfo
 from .T2obj import parse_DO_sections
 
 christ_the_king_datestr = "Sat between 23 Oct 31 Oct"

@@ -10,12 +10,16 @@ file.  They also return it.
 """
 
 from pathlib import Path
-from typing import List, Union
+from typing import List
+from typing import Union
 
 from jsonpickle import encode
 
-from ..objects import Feast, Martyrology
-from . import K2obj, M2obj, T2obj
+from ..objects import Feast
+from ..objects import Martyrology
+from . import K2obj
+from . import M2obj
+from . import T2obj
 
 
 def sanctoral_to_json(fn: Path, calendar: str) -> str:

@@ -1,10 +1,9 @@
-from flask import abort, request
+from flask import abort
+from flask import request
 from flask_api.decorators import set_renderers
-from flask_api.renderers import (
-    BaseRenderer,
-    BrowsableAPIRenderer,
-    JSONRenderer,
-)
+from flask_api.renderers import BaseRenderer
+from flask_api.renderers import BrowsableAPIRenderer
+from flask_api.renderers import JSONRenderer
 
 from ..bible import Vulgate
 from .api import api

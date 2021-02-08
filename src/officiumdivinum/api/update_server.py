@@ -11,7 +11,8 @@ import json
 import os
 
 import git
-from flask import abort, request
+from flask import abort
+from flask import request
 
 from .api import api
 

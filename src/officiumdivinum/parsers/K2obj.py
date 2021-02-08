@@ -3,14 +3,12 @@
 from pathlib import Path
 
 from ..DSL import months
-from ..objects import (
-    Celebration,
-    Commemoration,
-    Date,
-    Feast,
-    Rank,
-    rank_table_by_calendar,
-)
+from ..objects import Celebration
+from ..objects import Commemoration
+from ..objects import Date
+from ..objects import Feast
+from ..objects import Rank
+from ..objects import rank_table_by_calendar
 
 
 def parse_line(line: str, calendar: str) -> Feast:

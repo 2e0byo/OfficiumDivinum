@@ -2,8 +2,14 @@
 import re
 from pathlib import Path
 
-from ..DSL import days, months, ordinals, specials
-from ..objects import Date, Feast, Octave, Rank
+from ..DSL import days
+from ..DSL import months
+from ..DSL import ordinals
+from ..DSL import specials
+from ..objects import Date
+from ..objects import Feast
+from ..objects import Octave
+from ..objects import Rank
 
 
 def parse_DO_sections(lines: list) -> list:
