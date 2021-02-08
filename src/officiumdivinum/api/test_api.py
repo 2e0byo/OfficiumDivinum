@@ -2,9 +2,7 @@ from pathlib import Path
 
 from .api import api
 
-testpage = Path("./officiumdivinum/test.html").resolve()
-if not testpage.exists():
-    testpage = Path("~/OfficiumDivinum/officiumdivinum/test.html").expanduser()
+testpage = Path(api.root_path) / "static/test.html"
 
 
 @api.route("/")

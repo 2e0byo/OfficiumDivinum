@@ -3,6 +3,7 @@ from re import search
 
 from dotmap import DotMap
 
+from ..api.api import api
 from ..objects import Verse
 from .bible import Bible
 
@@ -47,9 +48,5 @@ class Vulgate(Bible):
         import os
 
         print(os.getcwd())
-        fn = Path("./officiumdivinum/bible/vulgate.txt")
-        if not fn.exists():
-            fn = Path(
-                "~/OfficiumDivinum/officiumdivinum/bible/vulgate.txt"
-            ).expanduser()
+        fn = Path(api.root_path) / "../bible/vulgate.txt"
         self.from_file(fn)
