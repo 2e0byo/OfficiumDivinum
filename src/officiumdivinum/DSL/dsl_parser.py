@@ -1,6 +1,7 @@
 """
 Parser for a very basic dsl to describe liturgical dates.  It has fixed methods:
 
+>>> from officiumdivinum.DSL.dsl_parser import specials
 >>> specials["Christmas"](2020)
 datetime.date(2020, 12, 25)
 
@@ -23,13 +24,29 @@ to only one date in any one year.
 from datetime import date
 
 from dateutil import easter
-from dateutil.relativedelta import FR, MO, SA, SU, TH, TU, WE, relativedelta
-from pyparsing import Group, Optional, Regex, Word, nums, oneOf
+from dateutil.relativedelta import FR
+from dateutil.relativedelta import MO
+from dateutil.relativedelta import SA
+from dateutil.relativedelta import SU
+from dateutil.relativedelta import TH
+from dateutil.relativedelta import TU
+from dateutil.relativedelta import WE
+from dateutil.relativedelta import relativedelta
+from pyparsing import Group
+from pyparsing import Optional
+from pyparsing import Regex
+from pyparsing import Word
+from pyparsing import nums
+from pyparsing import oneOf
 
 try:
-    from .util import days, months, ordinals
+    from .util import days
+    from .util import months
+    from .util import ordinals
 except ImportError:
-    from util import days, months, ordinals
+    from util import days
+    from util import months
+    from util import ordinals
 
 
 class DSLError(Exception):
