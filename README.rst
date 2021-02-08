@@ -47,7 +47,7 @@ Overview
 
 .. end-badges
 
-An Object-Oriented rewrite of divinumofficium.com
+An Object-Oriented rewrite of divinumofficium.com.
 
 * Free software: MIT license
 
@@ -56,11 +56,22 @@ Installation
 
 ::
 
-    pip install officiumdivinum
-
+If you want the latest release::
+   python -m pip install https://github.com/OfficiumDivinum/OfficiumDivinum/archive/master.zip
+    
 You can also install the in-development version with::
 
-    pip install https://github.com/OfficiumDivinum/OfficiumDivinum/archive/master.zip
+  python -m pip install git+https://github.com/OfficiumDivinum/OfficiumDivinum
+
+If you want to develop (or just tinker), [fork and] clone the
+repository, and then install in ‘development mode’::
+
+  git clone https://github.com/OfficiumDivinum/OfficiumDivinum
+  cd OfficiumDivinum
+  python -m venv venv # create a virtual environment
+  source venv/bin/activate # if using bash
+  # . venv/bin/activate.fish # if using fish
+  python -m pip install -e .
 
 
 Documentation
@@ -69,11 +80,50 @@ Documentation
 
 https://OfficiumDivinum.readthedocs.io/
 
+Background
+----------
+
+Divinumofficium is incredible.  Unfortunately, it is hard to know how
+it works:
+
+* Some data is stored in various (not really documented) text files,
+  other is hard-coded into scripts.
+* Some things are in funny places (for instance, the feast of the Holy
+  Name of Jesus is assigned in the calendar to the ‘0th January’, and
+  then moved to its variable date by the code).
+* Perl is very hard to read, at least for non perl coders!
+* Functions call each other in fun and non-obvious ways (at least for
+  non perl coders!)
+* It’s basically stateless, and takes the /Divinum Afflatu/ version as
+  the ‘default’, then to mutate it.  But this occasionally has problems.
+
+And it is hard to extend it:
+
+* The database format (which in any case is not used for everything)
+  is basically designed to output plaintext.
+* There are no symbolic representations of e.g. days, psalms, chapters
+  which could be traded for e.g. `gabc`. files to generate scores to
+  sing from.
+* Perl is hard!  (Did I say that before?)
+
+OfficiumDivinum is an attempt to address these problems by a complete
+re-write in a more modern idiom.  For a thorough rationale and
+philosophy (in the sense of ‘policy’ ;)) of the new approach see
+`https://OfficiumDivinum.readthedocs.io/background(background)`_.
+
+Using it
+--------
+
+You probably just want to go to the
+`https://OfficiumDivinum.readthedocs.io/(documentation)`_ and start
+using the web API.  But you might want to build a local service.  In
+the future there will be apps for Android and iOS.
+
 
 Development
 ===========
 
-To run all the tests run::
+To run all the tests and build documentation, run::
 
     tox
 
