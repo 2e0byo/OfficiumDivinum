@@ -54,8 +54,6 @@ An Object-Oriented rewrite of divinumofficium.com.
 Installation
 ============
 
-::
-
 If you want the latest release::
    python -m pip install https://github.com/OfficiumDivinum/OfficiumDivinum/archive/master.zip
     
