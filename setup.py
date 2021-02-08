@@ -72,6 +72,16 @@ setup(
     ],
     python_requires=">=3.8",
     install_requires=[
+        "dotmap==1.3.23",
+        "Flask==1.1.2",
+        "Flask-API==2.0",
+        "Flask-RESTful==0.3.8",
+        "GitPython==3.1.12",
+        "Jinja2==2.11.3",
+        "jsonpickle==2.0.0",
+        "pylunar==0.6.0",
+        "pyparsing==2.4.7",
+        "python-dateutil==2.8.1",
         # eg: 'aspectlib==1.1.1', 'six>=1.7',
     ],
     extras_require={
