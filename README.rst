@@ -107,13 +107,13 @@ And it is hard to extend it:
 OfficiumDivinum is an attempt to address these problems by a complete
 re-write in a more modern idiom.  For a thorough rationale and
 philosophy (in the sense of ‘policy’ ;)) of the new approach see
-`https://OfficiumDivinum.readthedocs.io/background(background)`_.
+`background <https://OfficiumDivinum.readthedocs.io/background>`_.
 
 Using it
 --------
 
 You probably just want to go to the
-`https://OfficiumDivinum.readthedocs.io/(documentation)`_ and start
+`documentation <https://OfficiumDivinum.readthedocs.io>`_ and start
 using the web API.  But you might want to build a local service.  In
 the future there will be apps for Android and iOS.
 
