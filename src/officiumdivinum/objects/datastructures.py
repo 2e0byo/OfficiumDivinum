@@ -1,18 +1,17 @@
 from dataclasses import dataclass
 from datetime import datetime
 from functools import total_ordering
-from typing import List, Union
+from typing import List
+from typing import Union
 
 import pylunar
 
 from ..DSL import dsl_parser
-from .divinumofficium_structures import (
-    feria_ranks,
-    latin_feminine_ordinals,
-    new_rank_table,
-    traditional_rank_lookup_table,
-    typo_translations,
-)
+from .divinumofficium_structures import feria_ranks
+from .divinumofficium_structures import latin_feminine_ordinals
+from .divinumofficium_structures import new_rank_table
+from .divinumofficium_structures import traditional_rank_lookup_table
+from .divinumofficium_structures import typo_translations
 from .html_render import verse_template
 
 """
