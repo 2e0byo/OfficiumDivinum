@@ -121,16 +121,7 @@ def _parse_timedelta(t):
 
 def dsl_parser(datestr: str, year: int) -> date:
     """
-    Parameters
-    ----------
-    datestr: str : Expression to be parsed.
-
-    year: int : Year in which to evaluate expression
-
-
-    Returns
-    -------
-    a date in the year in question.
+    Parse dsl str for a given year.
 
     >>> dsl_parser("Easter", 2020)
     datetime.date(2020, 4, 12)
@@ -147,6 +138,17 @@ def dsl_parser(datestr: str, year: int) -> date:
     >>> dsl_parser("22nd Sun after Pentecost", 2021)
     datetime.date(2021, 10, 24)
 
+    Parameters
+    ----------
+    datestr: str : Expression to be parsed.
+
+    year: int : Year in which to evaluate expression
+
+
+    Returns
+    -------
+    date
+        a date in the year in question.
     """
 
     # First we convert all possible date representations into isodate strings (yyyy-mm-dd)
