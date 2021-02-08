@@ -28,14 +28,6 @@ officiumdivinum.api.database module
    :undoc-members:
    :show-inheritance:
 
-officiumdivinum.api.errors module
----------------------------------
-
-.. automodule:: officiumdivinum.api.errors
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 officiumdivinum.api.martyrology module
 --------------------------------------
 
