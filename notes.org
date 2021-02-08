@@ -1,0 +1,6 @@
+* [0/5] TODO make deployable
+- [ ] Migrate to a package template https://github.com/ionelmc/cookiecutter-pylibrary
+- [ ] Set up tests
+- [ ] Set up venv for developping
+- [ ] Use thbump to bump versions
+- [ ] Add thorough walkthrough in contributing.rst
