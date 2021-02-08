@@ -17,7 +17,7 @@ datetime.date(2020, 2, 9)
 >>> specials["Epiphany"](2021)
 datetime.date(2021, 1, 6)
 
-It also has a parser to turn expressions into dates.  Expressions should evaluate 
+It also has a parser to turn expressions into dates.  Expressions should evaluate
 to only one date in any one year.
 """
 

@@ -5,4 +5,4 @@ This module provides methods to access any verse with vulgate numbering,
 even if it isn't in the vulgate.
 """
 
-from .vulgate import *
+from .vulgate import *  # noqa
