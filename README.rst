@@ -55,6 +55,7 @@ Installation
 ============
 
 If you want the latest release::
+  
    python -m pip install https://github.com/OfficiumDivinum/OfficiumDivinum/archive/master.zip
     
 You can also install the in-development version with::
