@@ -9,6 +9,7 @@ import hashlib
 import hmac
 import json
 import os
+from subprocess import run
 
 import git
 from flask import abort
@@ -79,6 +80,8 @@ def webhook():
             return json.dumps({"msg": "Didn't pull any information from remote!"})
         if pull_info[0].flags > 128:
             return json.dumps({"msg": "Didn't pull any information from remote!"})
+
+        run(["pip3", "install", "-e", "~/OfficiumDivinum"])
 
         commit_hash = pull_info[0].commit.hexsha
         build_commit = f'build_commit = "{commit_hash}"'
