@@ -1,3 +1,4 @@
-from backend.api import api, init
+from officiumdivinum.api import api
+from officiumdivinum.api import init
 
 init()

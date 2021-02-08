@@ -1,3 +1,3 @@
-from backend.api import martyrology
+from officiumdivinum.api import martyrology
 
 martyrology.main()

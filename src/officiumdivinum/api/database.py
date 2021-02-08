@@ -48,9 +48,9 @@ def eval_year(year, yearless):
 def load_martyrology():
     """"""
     global martyrology
-    p = Path("./backend/api/martyrology.json").resolve()
+    p = Path("./officiumdivinum/api/martyrology.json").resolve()
     if not p.exists():
-        p = Path("~/OfficiumDivinum/backend/api/martyrology.json").expanduser()
+        p = Path("~/OfficiumDivinum/officiumdivinum/api/martyrology.json").expanduser()
     with p.open() as f:
         raw_tables["martyrology"] = jsonpickle.decode(
             f.read(), classes=[datastructures.Date, datastructures.Martyrology]

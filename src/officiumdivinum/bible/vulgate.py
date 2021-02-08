@@ -47,7 +47,9 @@ class Vulgate(Bible):
         import os
 
         print(os.getcwd())
-        fn = Path("./backend/bible/vulgate.txt")
+        fn = Path("./officiumdivinum/bible/vulgate.txt")
         if not fn.exists():
-            fn = Path("~/OfficiumDivinum/backend/bible/vulgate.txt").expanduser()
+            fn = Path(
+                "~/OfficiumDivinum/officiumdivinum/bible/vulgate.txt"
+            ).expanduser()
         self.from_file(fn)

@@ -1,7 +1,7 @@
-backend
+officiumdivinum
 =======
 
 .. toctree::
    :maxdepth: 4
 
-   backend
+   officiumdivinum

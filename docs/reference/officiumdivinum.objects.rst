@@ -1,29 +1,29 @@
-backend.objects package
+officiumdivinum.objects package
 =======================
 
 Submodules
 ----------
 
-backend.objects.datastructures module
+officiumdivinum.objects.datastructures module
 -------------------------------------
 
-.. automodule:: backend.objects.datastructures
+.. automodule:: officiumdivinum.objects.datastructures
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.objects.divinumofficium\_structures module
+officiumdivinum.objects.divinumofficium\_structures module
 --------------------------------------------------
 
-.. automodule:: backend.objects.divinumofficium_structures
+.. automodule:: officiumdivinum.objects.divinumofficium_structures
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.objects.html\_render module
+officiumdivinum.objects.html\_render module
 -----------------------------------
 
-.. automodule:: backend.objects.html_render
+.. automodule:: officiumdivinum.objects.html_render
    :members:
    :undoc-members:
    :show-inheritance:
@@ -31,7 +31,7 @@ backend.objects.html\_render module
 Module contents
 ---------------
 
-.. automodule:: backend.objects
+.. automodule:: officiumdivinum.objects
    :members:
    :undoc-members:
    :show-inheritance:

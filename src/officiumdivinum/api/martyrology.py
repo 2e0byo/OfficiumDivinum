@@ -1,13 +1,16 @@
-from datetime import datetime, timedelta
+from datetime import datetime
+from datetime import timedelta
 
 import dateutil.parser as dp
-from flask import jsonify, request
-from jinja2 import Environment, PackageLoader
+from flask import jsonify
+from flask import request
+from jinja2 import Environment
+from jinja2 import PackageLoader
 
 from . import database
 from .api import api
 
-env = Environment(loader=PackageLoader("backend.api", "template/html/"))
+env = Environment(loader=PackageLoader("officiumdivinum.api", "template/html/"))
 martyrology_template = env.get_template("martyrology.html")
 
 

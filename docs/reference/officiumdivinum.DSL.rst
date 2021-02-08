@@ -1,21 +1,21 @@
-backend.DSL package
+officiumdivinum.DSL package
 ===================
 
 Submodules
 ----------
 
-backend.DSL.dsl\_parser module
+officiumdivinum.DSL.dsl\_parser module
 ------------------------------
 
-.. automodule:: backend.DSL.dsl_parser
+.. automodule:: officiumdivinum.DSL.dsl_parser
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.DSL.util module
+officiumdivinum.DSL.util module
 -----------------------
 
-.. automodule:: backend.DSL.util
+.. automodule:: officiumdivinum.DSL.util
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ backend.DSL.util module
 Module contents
 ---------------
 
-.. automodule:: backend.DSL
+.. automodule:: officiumdivinum.DSL
    :members:
    :undoc-members:
    :show-inheritance:

@@ -1,61 +1,61 @@
-backend.api package
+officiumdivinum.api package
 ===================
 
 Submodules
 ----------
 
-backend.api.api module
+officiumdivinum.api.api module
 ----------------------
 
-.. automodule:: backend.api.api
+.. automodule:: officiumdivinum.api.api
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.api.bible module
+officiumdivinum.api.bible module
 ------------------------
 
-.. automodule:: backend.api.bible
+.. automodule:: officiumdivinum.api.bible
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.api.database module
+officiumdivinum.api.database module
 ---------------------------
 
-.. automodule:: backend.api.database
+.. automodule:: officiumdivinum.api.database
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.api.errors module
+officiumdivinum.api.errors module
 -------------------------
 
-.. automodule:: backend.api.errors
+.. automodule:: officiumdivinum.api.errors
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.api.martyrology module
+officiumdivinum.api.martyrology module
 ------------------------------
 
-.. automodule:: backend.api.martyrology
+.. automodule:: officiumdivinum.api.martyrology
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.api.test\_api module
+officiumdivinum.api.test\_api module
 ----------------------------
 
-.. automodule:: backend.api.test_api
+.. automodule:: officiumdivinum.api.test_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.api.update\_server module
+officiumdivinum.api.update\_server module
 ---------------------------------
 
-.. automodule:: backend.api.update_server
+.. automodule:: officiumdivinum.api.update_server
    :members:
    :undoc-members:
    :show-inheritance:
@@ -63,7 +63,7 @@ backend.api.update\_server module
 Module contents
 ---------------
 
-.. automodule:: backend.api
+.. automodule:: officiumdivinum.api
    :members:
    :undoc-members:
    :show-inheritance:

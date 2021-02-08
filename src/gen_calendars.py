@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from backend.parsers.run_parser import pokemon_to_json
+from officiumdivinum.parsers.run_parser import pokemon_to_json
 
 things = list(
     pokemon_to_json(
@@ -10,7 +10,7 @@ things = list(
 
 fns = ("sanctoral", "temporal", "martyrology")
 
-root = Path("./backend/api")
+root = Path("./officiumdivinum/api")
 
 for i in range(len(fns)):
     with (root / f"{fns[i]}.json").open("w") as f:

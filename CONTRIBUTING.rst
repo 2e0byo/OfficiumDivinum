@@ -2,24 +2,51 @@
 Contributing
 ============
 
-Contributions are welcome, and they are greatly appreciated! Every
-little bit helps, and credit will always be given.
+We welcome contributions by anyone who can make the content or
+implementation better in any way, or who wants to add a feature we
+don’t currently provide.  If you have just found a problem or typo you
+probably want to `open an issue
+<https://github.com/OfficiumDivinum/OfficiumDivinum/issues>`_.
+
+As a non-programmer
+===================
+
+OfficiumDivinum is written to be accessible to non-programmers.  In
+the production version, you will be able to create an account and
+edit/add all parts of the office without writing a line of code.  This
+is built on our heavy use of human-readable DSLs to describe different
+parts of the data.
 
 Bug reports
 ===========
 
-When `reporting a bug <https://github.com/OfficiumDivinum/OfficiumDivinum/issues>`_ please include:
+Bugs occur when you don’t get what you should have.  There are other
+kinds of issues, see below.  When `reporting a bug
+<https://github.com/OfficiumDivinum/OfficiumDivinum/issues>`_ please
+include:
 
-    * Your operating system name and version.
+    * Your operating system name and version (if you are running locally).
     * Any details about your local setup that might be helpful in troubleshooting.
     * Detailed steps to reproduce the bug.
+    * If you are reporting a discrepancy against published liturgical
+      books, please provide a link to a pdf of to volume in question
+      (there are lots of breviaries/missals on https://archive.org ).
+
+
+Other kinds of Issues
+=====================
+
+Feel free to open issues to discuss the future direction of the
+project; to propose changes; to tell us what you’ve done with
+OfficiumDivinum, or for any other sensible reason.  You can also get
+in touch by email.
 
 Documentation improvements
 ==========================
 
-OfficiumDivinum could always use more documentation, whether as part of the
-official OfficiumDivinum docs, in docstrings, or even on the web in blog posts,
-articles, and such.
+OfficiumDivinum could always use more documentation, whether as part
+of the official OfficiumDivinum docs, in docstrings, or even on the
+web in blog posts, articles, and such.
 
 Feature requests and feedback
 =============================
@@ -31,7 +58,7 @@ If you are proposing a feature:
 * Explain in detail how it would work.
 * Keep the scope as narrow as possible, to make it easier to implement.
 * Remember that this is a volunteer-driven project, and that code contributions are welcome :)
-
+  
 Development
 ===========
 

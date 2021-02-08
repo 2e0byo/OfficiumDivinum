@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from backend.bible import Vulgate
+from officiumdivinum.bible import Vulgate
 
 fn = Path("/home/john/code/divinum-officium/web/www/horas/Help/vulgate.txt")
 vulgate = Vulgate("vulgate")

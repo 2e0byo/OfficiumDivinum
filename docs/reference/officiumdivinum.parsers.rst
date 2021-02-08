@@ -1,4 +1,4 @@
-backend.parsers package
+officiumdivinum.parsers package
 =======================
 
 The parsers are one-off scripts used to turn divinumofficium source
@@ -14,34 +14,34 @@ used them at the beginning.
 Submodules
 ----------
 
-backend.parsers.K2obj module
+officiumdivinum.parsers.K2obj module
 ----------------------------
 
-.. automodule:: backend.parsers.K2obj
+.. automodule:: officiumdivinum.parsers.K2obj
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.parsers.M2obj module
+officiumdivinum.parsers.M2obj module
 ----------------------------
 
-.. automodule:: backend.parsers.M2obj
+.. automodule:: officiumdivinum.parsers.M2obj
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.parsers.T2obj module
+officiumdivinum.parsers.T2obj module
 ----------------------------
 
-.. automodule:: backend.parsers.T2obj
+.. automodule:: officiumdivinum.parsers.T2obj
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.parsers.run\_parser module
+officiumdivinum.parsers.run\_parser module
 ----------------------------------
 
-.. automodule:: backend.parsers.run_parser
+.. automodule:: officiumdivinum.parsers.run_parser
    :members:
    :undoc-members:
    :show-inheritance:
@@ -49,7 +49,7 @@ backend.parsers.run\_parser module
 Module contents
 ---------------
 
-.. automodule:: backend.parsers
+.. automodule:: officiumdivinum.parsers
    :members:
    :undoc-members:
    :show-inheritance:

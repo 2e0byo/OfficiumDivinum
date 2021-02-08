@@ -1,21 +1,21 @@
-backend.bible package
+officiumdivinum.bible package
 =====================
 
 Submodules
 ----------
 
-backend.bible.bible module
+officiumdivinum.bible.bible module
 --------------------------
 
-.. automodule:: backend.bible.bible
+.. automodule:: officiumdivinum.bible.bible
    :members:
    :undoc-members:
    :show-inheritance:
 
-backend.bible.vulgate module
+officiumdivinum.bible.vulgate module
 ----------------------------
 
-.. automodule:: backend.bible.vulgate
+.. automodule:: officiumdivinum.bible.vulgate
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ backend.bible.vulgate module
 Module contents
 ---------------
 
-.. automodule:: backend.bible
+.. automodule:: officiumdivinum.bible
    :members:
    :undoc-members:
    :show-inheritance:
