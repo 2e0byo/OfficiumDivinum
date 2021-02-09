@@ -73,6 +73,7 @@ repository, and then install in ‘development mode’::
   python -m pip install -e .
 
 To run the development server, run::
+
   export FLASK_APP=src/api.py
   export FLASK_ENV=developemnt
   flask run
