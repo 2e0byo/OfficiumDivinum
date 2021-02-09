@@ -284,3 +284,4 @@ docs/_build
 
 # Mypy Cache
 .mypy_cache/
+/src/test.py
