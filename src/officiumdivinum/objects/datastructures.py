@@ -35,6 +35,18 @@ class RankException(Exception):
 Rank = None  # temporary var to allow circular classing....
 
 
+class Strobj:
+    def html(self):
+        return render_template("html/string.html", content=self.content)
+
+
+class Renderable:
+    """Base class for renderable objects."""
+
+    def html(self):
+        return render_template(f"html/{self.template}.html", obj=self)
+
+
 @dataclass
 class Octave:
     """Class to represent an octave, which may be of various kinds
