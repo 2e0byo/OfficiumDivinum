@@ -1,6 +1,8 @@
-from jinja2 import Environment
-from jinja2 import PackageLoader
+import flask
 
-env = Environment(loader=PackageLoader("officiumdivinum.objects", "templates/"))
 
-verse_template = env.get_template("verse.html")
+def render_template(template, **kwargs):
+    from ..api.api import api
+
+    with api.app_context(), api.test_request_context():
+        return flask.render_template(template, **kwargs)
