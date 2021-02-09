@@ -12,7 +12,7 @@ from .divinumofficium_structures import latin_feminine_ordinals
 from .divinumofficium_structures import new_rank_table
 from .divinumofficium_structures import traditional_rank_lookup_table
 from .divinumofficium_structures import typo_translations
-from .html_render import verse_template
+from .html_render import render_template
 
 """
 Since sometimes we call parsers manually, we enforce only parsing for
