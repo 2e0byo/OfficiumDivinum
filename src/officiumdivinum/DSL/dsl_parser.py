@@ -123,6 +123,7 @@ def dsl_parser(datestr: str, year: int) -> date:
     """
     Parse dsl str for a given year.
 
+    >>> from officiumdivinum.DSL.dsl_parser import dsl_parser
     >>> dsl_parser("Easter", 2020)
     datetime.date(2020, 4, 12)
 
