@@ -10,7 +10,7 @@ from jinja2 import PackageLoader
 from . import database
 from .api import api
 
-env = Environment(loader=PackageLoader("officiumdivinum.api", "template/html/"))
+env = Environment(loader=PackageLoader("officiumdivinum.api", "templates/html/"))
 martyrology_template = env.get_template("martyrology.html")
 
 
