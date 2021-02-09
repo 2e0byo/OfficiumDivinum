@@ -309,10 +309,7 @@ class Verse:
     book: str
     content: str
     version: str = None  # in case we want it later
-
-    def html(self):
-        """Return html rendered."""
-        return verse_template.render(v=self)
+    template = "verse"
 
 
 @dataclass
@@ -323,10 +320,18 @@ class Reading:
     ref: str
     content: List[Union[Verse, str]]
     description: str = None
+    template = "reading"
 
 
 @dataclass
-class Responsory:
+class Rubric(Strobj):
+    """Class to represent a rubric displayed by itself."""
+
+    content: str
+
+
+@dataclass
+class Responsory(Renderable):
     """
     Class to represent a responsory.
 
@@ -334,12 +339,14 @@ class Responsory:
 
     Parameters
     ----------
+    content: List[tuple]: List of lhs, rhs tuples.
 
     Returns
     -------
     """
 
-    content: List[str]
+    content: List[tuple]
+    template = "responsory"
 
 
 @dataclass
