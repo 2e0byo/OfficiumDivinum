@@ -82,6 +82,7 @@ setup(
         "pylunar==0.6.0",
         "pyparsing==2.4.7",
         "python-dateutil==2.8.1",
+        "Markdown==3.3.3"
         # eg: 'aspectlib==1.1.1', 'six>=1.7',
     ],
     extras_require={
