@@ -1,0 +1,6 @@
+{% if obj.name %}
+<h3>{{ obj.name }}</h3>
+{% endif %}
+{% for thing in obj.content %}
+{{ thing.html()|safe }}
+{% endfor %}

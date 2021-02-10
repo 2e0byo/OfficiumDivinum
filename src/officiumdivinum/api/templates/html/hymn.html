@@ -1,0 +1,11 @@
+{% if obj.name %}
+<h3>{{ obj.name }}</h3>
+{% endif %}
+
+{% for verse in obj.content %}
+<p class="hymn">
+  {% for line in verse %}
+  {{ line|markdown }}<br />
+  {% endfor %}
+</p>
+{% endfor %}
