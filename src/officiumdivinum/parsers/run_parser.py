@@ -19,6 +19,7 @@ from ..objects import Feast
 from ..objects import Martyrology
 from . import K2obj
 from . import M2obj
+from . import P2obj
 from . import T2obj
 
 
@@ -126,7 +127,17 @@ def pokemon(
             martyrology.append(obj_or_objs)
         else:
             martyrology += obj_or_objs
-    return sanctoral, temporal, martyrology
+
+    psalms = []
+
+    for f in (root / "psalms1").glob("*.txt"):
+        try:
+            psalm = P2obj.parse_file(f, lang)
+            psalms.append(lang)
+        except:
+            pass
+
+    return sanctoral, temporal, martyrology, psalms
 
 
 def pokemon_to_json(lang, calendar, root):
