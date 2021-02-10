@@ -70,6 +70,11 @@ def load_psalms():
 
     p = Path(api.root_path) / Path("psalms.json")
     with p.open() as f:
+        try:
+            raw_tables["psalms"]
+        except KeyError:
+            raw_tables["psalms"] = {}
+
         raw_tables["psalms"]["latin"] = jsonpickle.decode(
             f.read(), classes=[datastructures.Psalm, datastructures.Verse]
         )
@@ -161,6 +166,7 @@ def martyrology_query(day, table):
 def init():
     """Start database."""
     load_martyrology()
+    load_psalms()
 
 
 def get_psalm(psalm, language, start=None, stop=None):
@@ -213,13 +219,21 @@ def get_office(
     tomorrow = today + timedelta(days=1)
 
     office = Prime(
+        "Ad Primam",
         language,
-        [inv["Deus in adjutorium"], inv["gloria"], inv["laus tibi"]],
+        datastructures.Incipit(
+            "Incipit", [inv["deus in adjutorium"], inv["gloria"], inv["laus tibi"]]
+        ),
         inv["iam lucis"],
         datastructures.Antiphon(
             "Misericordia tua, * Domine ante oculos meos: et complacui in veritate tua."
         ),
-        [get_psalm("25"), get_psalm("51"), get_psalm("52")],
+        [
+            get_psalm("25", language),
+            get_psalm("51", language),
+            get_psalm("52", language),
+        ],
+        [inv["christe, fili dei per annum"], inv["exurge christe per annum"]],
         martyrology_query(tomorrow, "martyrology"),
         datastructures.Reading(
             "Lectio Brevis",

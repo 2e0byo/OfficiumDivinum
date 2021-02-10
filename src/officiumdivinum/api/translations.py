@@ -13,7 +13,7 @@ from ..objects.datastructures import Responsory
 invariants = {
     "latin": {
         "regi saeculorum": Reading(
-            "regi saeculorum",
+            "Capitulum",
             "1Tim1:17",
             [
                 "Regi sæculórum immortáli et invisíbili, soli Deo honor et glória in sǽcula sæculórum. Amen. "
@@ -105,7 +105,7 @@ invariants = {
         "dominus nos benedicat": Blessing(
             "Dóminus nos benedícat, + et ab omni malo deféndat, et ad vitam perdúcat ætérnam. Et fidélium ánimæ per misericórdiam Dei requiéscant in pace."
         ),
-        "Deus in adjutorium": Responsory(
+        "deus in adjutorium": Responsory(
             [
                 ("V.", "Deus + in adjutórium meum inténde."),
                 ("R." "Dómine, ad adjuvándum me festína."),
@@ -113,7 +113,7 @@ invariants = {
         ),
         "laus tibi": "Laus tibi, Dómine, Rex ætérnæ glóriæ.",
         "iam lucis": Hymn(
-            "Iam Lucis",
+            "Hymnus",
             [
                 [
                     "Jam lucis orto sídere,",

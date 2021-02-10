@@ -1,6 +1,6 @@
-<span class="versenumber">}
+<span class="versenumber">
   {% if obj.chapter %}{{ obj.chapter }}:{% endif %}
-  {% if obj.verse %}{{ obj.verse|markdown }}{% endif %}
+  {% if obj.number %}{{ obj.number }}{% endif %}
 </span>
-{{obj.content}}
+{{obj.content|markdown}}
 <br />

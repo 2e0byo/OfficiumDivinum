@@ -16,11 +16,14 @@ from .datastructures import dataclass
 class Prime(Renderable):  # use a custom base class if need be
     """Class to represent the office of Prime."""
 
+    name: str
     language: str
-    intro: List[Responsory]
+    introit: List[Responsory]
     hymn: Hymn
     antiphon: Antiphon
     psalms: List[Psalm]
+    post_chapter: List[Responsory]
     martyrology: Martyrology
     chapter: Reading
     invariants: Dict
+    template = "prime.html"

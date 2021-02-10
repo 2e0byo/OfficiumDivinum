@@ -314,11 +314,21 @@ class Martyrology:
 
 @dataclass
 class Verse(Renderable):
-    """"""
+    """
+    Parameters
+    ----------
+
+    number: int : Verse number.
+    chapter: int : Chapter number.
+    book: str: Book (can be None to indicate 'don't print')
+    content: str : Verse content.
+    version: str or None: Version in question (probably not worth storing here).
+
+    """
 
     number: int
     chapter: int
-    book: str
+    book: Union[str, None]
     content: str
     version: str = None  # in case we want it later
     template = "verse"
@@ -379,6 +389,22 @@ class Responsory(Renderable):
 
     content: List[tuple]
     template = "responsory"
+
+
+@dataclass
+class Incipit(Renderable):
+    """Class to represent an incipit.
+    Paramters
+    ---------
+
+    name: str: Name of *an incipit* in the right language.
+    content: List[Versicle]: list of Responsory objects.
+
+    """
+
+    name: str
+    content: List[Responsory]
+    template = "incipit"
 
 
 @dataclass
