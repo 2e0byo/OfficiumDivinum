@@ -313,7 +313,7 @@ class Martyrology:
 
 
 @dataclass
-class Verse:
+class Verse(Renderable):
     """"""
 
     number: int
@@ -325,7 +325,7 @@ class Verse:
 
 
 @dataclass
-class Reading:
+class Reading(Renderable):
     """"""
 
     name: str
