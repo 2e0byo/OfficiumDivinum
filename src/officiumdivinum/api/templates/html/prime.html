@@ -1,0 +1,49 @@
+<article lang={{obj.language}}>
+  <h2>{{object.name}}</h2>
+
+  {{obj.introit.html()|safe}}
+
+  {{obj.hymn.html()|safe}}
+
+  {{obj.antiphon.html()|safe}}
+
+  {% for psalm in obj.psalms %}
+  {{ psalm.html()|safe }}
+  {% endfor %}
+  
+  {{ obj.antiphon.html()|safe }}
+
+  {{ obj.invariants["regi saeculorum"].html()|safe }}
+  
+  {% for thing in obj.post_chapter %}
+  {{ thing.html()|safe }}
+  {% endfor %}
+
+  {{ obj.invariants["domine exaudi"].html()|safe }}
+  {{ obj.invariants["oremus"]|markdown }}
+  {{ obj.invariants["domine deus omnipotens"].html()|safe }}
+  {{ obj.invariants["domine exaudi"].html()|safe }}
+  {{ obj.invariants["benedicamus domino"].html()|safe }}
+  
+  {{ obj.martyrology.html()|safe }}
+  {{ obj.invariants["pretiosa"].html()|safe }}
+  {{ obj.invariants["sancta maria et omnes"].html()|safe }}
+  {% for i in range(3) %}
+  {{obj.invariants["deus in adjutorium"]}}
+  {% endfor %}
+  {{ obj.invariants["kyrie"]|markdown }}
+  {{ obj.invariants["pater"].html()|safe }}
+  {{ obj.invariants["respice"].html()|safe }}
+  {{ obj.invariants["gloria"].html()|safe }}
+  {{ obj.invariants["oremus"]|markdown }}
+  {{ obj.invariants["dirigere et sanctificare"].html()|safe }}
+  {{ obj.invariants["iube domipne"].html()|safe }}
+  {{ obj.invariants["dies et actus"].html()|safe }}
+
+  {{ obj.chapter.html()|safe }}
+
+  {{ obj.invariants["adjutorium"].html()|safe }}
+  {{ obj.invariants["benedicite"].html()|safe }}
+  {{ obj.invariants["dominus nos benedicat"].html()|safe }}
+    
+</article>
