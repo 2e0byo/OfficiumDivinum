@@ -35,16 +35,28 @@ class RankException(Exception):
 Rank = None  # temporary var to allow circular classing....
 
 
-class Strobj:
-    def html(self):
-        return render_template("html/string.html", content=self.content)
-
-
 class Renderable:
     """Base class for renderable objects."""
 
     def html(self):
         return render_template(f"html/{self.template}.html", obj=self)
+
+
+@dataclass
+class Hymn(Renderable):
+    """Class to represent a hymn."""
+
+    name: str
+    content: List[str]
+    template = "hymn"
+
+
+@dataclass
+class Antiphon(Renderable):
+    """Class to represent an anitphon (for psalms)."""
+
+    content: str
+    template = "string"
 
 
 @dataclass
@@ -324,10 +336,20 @@ class Reading:
 
 
 @dataclass
-class Rubric(Strobj):
+class Rubric(Renderable):
     """Class to represent a rubric displayed by itself."""
 
     content: str
+    template = "string"
+
+
+@dataclass
+class Psalm(Renderable):
+    """Class to represent a psalm."""
+
+    content: List[Verse]
+    ref: str
+    template = "psalm"
 
 
 @dataclass
