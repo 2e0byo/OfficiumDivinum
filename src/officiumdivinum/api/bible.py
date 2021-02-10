@@ -1,9 +1,9 @@
 from flask import abort
 from flask import request
 from flask_api.decorators import set_renderers
-from flask_api.renderers import BaseRenderer
 from flask_api.renderers import BrowsableAPIRenderer
 from flask_api.renderers import JSONRenderer
+from renderers import objectHTMLRenderer
 
 from ..bible import Vulgate
 from .api import api
@@ -11,19 +11,6 @@ from .api import api
 # from .errors import InvalidInput
 
 versions = {"vulgate": Vulgate("Sixto-Clementine Vulgate")}
-
-
-class objectHTMLRenderer(BaseRenderer):
-    media_type = 'text/html; charset="UTF-8"'
-
-    def render(self, data, media_type, **options):
-
-        rendered = ""
-        for thing in data:
-            rendered += thing.html()
-
-        else:
-            return rendered
 
 
 @api.route("/bible/", methods=["Get"])
