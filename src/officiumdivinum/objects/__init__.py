@@ -2,3 +2,4 @@
 
 from .datastructures import *  # noqa
 from .divinumofficium_structures import *  # noqa
+from .offices import *  # noqa

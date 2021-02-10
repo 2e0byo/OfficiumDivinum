@@ -47,7 +47,7 @@ class Hymn(Renderable):
     """Class to represent a hymn."""
 
     name: str
-    content: List[str]
+    verses: List[List[str]]
     template = "hymn"
 
 

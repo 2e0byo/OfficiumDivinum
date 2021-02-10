@@ -1,5 +1,5 @@
 """Objects to represent (and if need be render) whole offices."""
-from translations import invariants
+from typing import Dict
 
 from .datastructures import Antiphon
 from .datastructures import Hymn
@@ -14,21 +14,13 @@ from .datastructures import dataclass
 
 @dataclass
 class Prime(Renderable):  # use a custom base class if need be
-    """
-    Class to represent the office of Prime.
-
-    Invariant parts are supplied automatically based on the language
-    parameter.
-    """
+    """Class to represent the office of Prime."""
 
     language: str
-    intro: Responsory
+    intro: List[Responsory]
     hymn: Hymn
     antiphon: Antiphon
     psalms: List[Psalm]
     martyrology: Martyrology
     chapter: Reading
-
-    def __postinit__(self):
-        """Supply invariant parts."""
-        self.invariants = invariants[self.language]
+    invariants: Dict

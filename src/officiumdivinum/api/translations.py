@@ -6,6 +6,7 @@ out at object creation.
 """
 from .datastructures import Blessing
 from .datastructures import Collect
+from .datastructures import Hymn
 from .datastructures import Reading
 from .datastructures import Responsory
 
@@ -104,5 +105,50 @@ invariants = {
         "dominus nos benedicat": Blessing(
             "Dóminus nos benedícat, + et ab omni malo deféndat, et ad vitam perdúcat ætérnam. Et fidélium ánimæ per misericórdiam Dei requiéscant in pace."
         ),
+        "Deus in adjutorium": Responsory(
+            [
+                ("V.", "Deus + in adjutórium meum inténde."),
+                ("R." "Dómine, ad adjuvándum me festína."),
+            ]
+        ),
+        "laus tibi": "Laus tibi, Dómine, Rex ætérnæ glóriæ.",
+        "iam lucis": Hymn(
+            "Iam Lucis",
+            [
+                [
+                    "Jam lucis orto sídere,",
+                    "Deum precémur súpplices,",
+                    "Ut in diúrnis áctibus",
+                    "Nos servet a nocéntibus.",
+                ],
+                [
+                    "Linguam refrénans témperet,",
+                    "Ne litis horror ínsonet:",
+                    "Visum fovéndo cóntegat,",
+                    "Ne vanitátes háuriat.",
+                ],
+                [
+                    "Sint pura cordis íntima,",
+                    "Absístat et vecórdia;",
+                    "Carnis terat supérbiam",
+                    "Potus cibíque párcitas.",
+                ],
+                [
+                    "Ut, cum dies abscésserit,",
+                    "Noctémque sors redúxerit,",
+                    "Mundi per abstinéntiam",
+                    "Ipsi canámus glóriam.",
+                ],
+                [
+                    "Deo Patri sit glória,",
+                    "Ejúsque selfoli Fílio,",
+                    "Cum Spíritu Paráclito,",
+                    "Nunc et per omne sǽculum.",
+                    "Amen.",
+                ],
+            ],
+        ),
     }
 }
+
+psalms[]
