@@ -144,7 +144,7 @@ invariants = {
                 ],
                 [
                     "Deo Patri sit glória,",
-                    "Ejúsque selfoli Fílio,",
+                    "Ejúsque soli Fílio,",
                     "Cum Spíritu Paráclito,",
                     "Nunc et per omne sǽculum.",
                     "Amen.",
