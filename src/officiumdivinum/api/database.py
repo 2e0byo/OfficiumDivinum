@@ -108,7 +108,6 @@ def assemble_martyrology(candidates: list, year: int):
         except AttributeError:
             extra_info += candidate.content
 
-    print(template)
     template.content = extra_info + content
     template.year = year
     return template

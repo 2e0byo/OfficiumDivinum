@@ -51,8 +51,6 @@ def html_query(day, table):
 
 def main():
     init()
-    print(dir(api))
-    print(api)
     api.run()
 
 
