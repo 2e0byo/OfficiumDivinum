@@ -1,3 +1,3 @@
 <div class="psalm">
-  {% for verse in obj.content %}{{verse.html()}}{% endfor %}
+  {% for verse in obj.content %}{{verse.html()|safe}}{% endfor %}
 </div>
