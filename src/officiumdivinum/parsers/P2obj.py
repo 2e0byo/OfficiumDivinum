@@ -14,10 +14,13 @@ def parse_file(fn: Path, lang: str):
     verses = []
     with fn.open() as f:
         for line in f.readlines():
-            chapter, verseno, verse = re.search(
-                r"([0-9]+):([0-9]+) (.*)", line
-            ).groups()
-            verse = Verse(verseno, chapter, "Psalm", verse)
-            verses.append(verse)
+            try:
+                chapter, verseno, verse = re.search(
+                    r"([0-9]+):([0-9]+) (.*)", line
+                ).groups()
+                verse = Verse(verseno, chapter, "Psalm", verse)
+                verses.append(verse)
+            except AttributeError:
+                verses.append(line.strip())
 
-    return Psalm(verses, fn.stem, invariants[lang]["gloria"])
+    return Psalm(verses, fn.stem, invariants[lang.lower()]["gloria"])

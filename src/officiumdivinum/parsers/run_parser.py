@@ -128,14 +128,12 @@ def pokemon(
         else:
             martyrology += obj_or_objs
 
-    psalms = []
+    psalms = {}
 
     for f in (root / "psalms1").glob("*.txt"):
-        try:
-            psalm = P2obj.parse_file(f, lang)
-            psalms.append(lang)
-        except:
-            pass
+        psalmno = f.stem
+        psalm = P2obj.parse_file(f, lang)
+        psalms[psalmno] = psalm
 
     return sanctoral, temporal, martyrology, psalms
 

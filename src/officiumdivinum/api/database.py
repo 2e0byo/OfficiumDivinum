@@ -64,6 +64,17 @@ def load_martyrology():
         )
 
 
+def load_psalms():
+    """"""
+    from .api import api
+
+    p = Path(api.root_path) / Path("psalms.json")
+    with p.open() as f:
+        raw_tables["psalms"]["latin"] = jsonpickle.decode(
+            f.read(), classes=[datastructures.Psalm, datastructures.Verse]
+        )
+
+
 years = {}
 
 year_tables = {"martyrology": None}
@@ -152,8 +163,17 @@ def init():
     load_martyrology()
 
 
-def get_psalm(psalm, language):
-    pass
+def get_psalm(psalm, language, start=None, stop=None):
+    psalm = raw_tables["psalms"][language]
+    if not stop and not start:
+        return psalm
+    else:
+        verses = []
+        for verse in psalm.verses:
+            if verse.number >= start and verse.number <= stop:
+                verses.append(verse)
+        psalm.verses = verses
+        return psalm
 
 
 def get_office(

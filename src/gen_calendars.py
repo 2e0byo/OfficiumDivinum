@@ -1,7 +1,6 @@
 from pathlib import Path
 
-from officiumdivinum.parsers import P2obj
-from officiumdivinum.parsers.run_parser import pokemon_to_json
+rom officiumdivinum.parsers.run_parser import pokemon_to_json
 
 things = list(
     pokemon_to_json(
@@ -10,7 +9,7 @@ things = list(
 )
 
 
-fns = ("sanctoral", "temporal", "martyrology")
+fns = ("sanctoral", "temporal", "martyrology", "psalms")
 
 root = Path("./officiumdivinum/api")
 
