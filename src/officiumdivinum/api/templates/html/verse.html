@@ -1,5 +1,6 @@
-<verse>
-  <chapter-no>{{ obj.chapter }}</chapter-no>
-  <verse-no>{{ obj.number }}</verse-no>
-  <verse-content> {{ obj.content }}</verse-content>
-</verse>
+<span class="versenumber">}
+  {% if obj.chapter %}{{ obj.chapter }}:{% endif %}
+  {% if obj.verse %}{{ obj.verse|markdown }}{% endif %}
+</span>
+{obj.content}
+<br />
