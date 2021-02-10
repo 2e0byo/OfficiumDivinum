@@ -4,14 +4,14 @@ from datetime import timedelta
 import dateutil.parser as dp
 from flask import jsonify
 from flask import request
+from flask_api.decorators import set_renderers
+from flask_api.renderers import JSONRenderer
 from jinja2 import Environment
 from jinja2 import PackageLoader
 
 from . import database
 from .api import api
-
-env = Environment(loader=PackageLoader("officiumdivinum.api", "templates/html/"))
-martyrology_template = env.get_template("martyrology.html")
+from .renderers import objectHTMLRenderer
 
 
 def init():
@@ -27,6 +27,7 @@ invalid_date = "<title>Invalid date supplied</title>"
 
 
 @api.route("/martyrology/", methods=["GET"])
+@set_renderers(JSONRenderer, objectHTMLRenderer)
 def get_martyrology():
     args = request.args
     try:
@@ -40,13 +41,10 @@ def get_martyrology():
             return json_query(day, "martyrology")
     except KeyError:
         pass
-    return html_query(day, "martyrology")
 
-
-def html_query(day, table):
-    old_date, content = database.martyrology_query(day, table)
-    args = {"old_date": old_date, "content": content}
-    return martyrology_template.render(**args)
+    martyrology = database.martyrology_query(day, "martyrology")
+    print(martyrology.html())
+    return [martyrology]
 
 
 def main():

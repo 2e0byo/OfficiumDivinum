@@ -320,7 +320,7 @@ class Martyrology(Renderable):
 
     def html(self):
         self.old_date, self.content = self.render(self.year)
-        super().html()
+        return super().html()
 
 
 @dataclass
