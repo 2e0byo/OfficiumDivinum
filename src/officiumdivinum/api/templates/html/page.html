@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark light">
     <link rel="stylesheet" type="text/css" href={{ url_for("static", filename="style.css") }} media="screen" />
-    <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="./js/js.cookie.min.js"></script>
+    <script type="text/javascript" src={{url_for("static", filename="./js/jquery-3.5.1.min.js")}}></script>
+    <script type="text/javascript" src={{url_for("static", filename="./js/js.cookie.min.js")}}></script>
   </head>
   <body>
     <div class="mainheader">
