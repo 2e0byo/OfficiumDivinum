@@ -382,11 +382,20 @@ class Responsory(Renderable):
 
 
 @dataclass
-class Collect:
+class Collect(Renderable):
     """Class to represent a collect."""
 
     collect: str
     termination: str
+    template = "collect"
+
+
+@dataclass
+class Blessing(Renderable):
+    """Class to represent a blessing."""
+
+    content: str
+    template = "blessing"
 
 
 @dataclass

@@ -1,0 +1,7 @@
+<p class="oratio">
+  {{ obj.content|markdown }}
+  {{ obj.termination|markdown }}
+  {% if not obj.suppress_amen %}
+  <span class="versenumber">℟.</span> Amen.
+  {% endif %}
+</p>
