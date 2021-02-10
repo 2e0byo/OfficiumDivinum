@@ -1,1 +1,5 @@
-{{ obj.content|markdown }} <!-- available in this template: obj.ref -->
+{% for par in obj.content %}
+  <p class="lectio">
+    {{ par.html()|safe }}
+  </p>
+{% endfor %}

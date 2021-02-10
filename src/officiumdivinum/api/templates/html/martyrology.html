@@ -1,9 +1,9 @@
 <title>Martyrologium</title>
 
-<h1>{{ old_date }}</h1>
+<h1>{{ obj.old_date }}</h1>
 
 <div>
-{% for par in content %}
+{% for par in obj.content %}
 <p>{{par}}</p>
 {% endfor %}
 </div>

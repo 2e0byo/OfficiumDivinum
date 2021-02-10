@@ -9,6 +9,7 @@ from ..objects.datastructures import Collect
 from ..objects.datastructures import Hymn
 from ..objects.datastructures import Reading
 from ..objects.datastructures import Responsory
+from ..objects.datastructures import StrObj
 
 invariants = {
     "latin": {
@@ -16,7 +17,9 @@ invariants = {
             "Capitulum",
             "1Tim1:17",
             [
-                "Regi sæculórum immortáli et invisíbili, soli Deo honor et glória in sǽcula sæculórum. Amen. "
+                StrObj(
+                    "Regi sæculórum immortáli et invisíbili, soli Deo honor et glória in sǽcula sæculórum. Amen. "
+                )
             ],
         ),
         "christe, fili dei per annum": Responsory(
@@ -111,7 +114,7 @@ invariants = {
                 ("R." "Dómine, ad adjuvándum me festína."),
             ]
         ),
-        "laus tibi": "Laus tibi, Dómine, Rex ætérnæ glóriæ.",
+        "laus tibi": StrObj("Laus tibi, Dómine, Rex ætérnæ glóriæ."),
         "iam lucis": Hymn(
             "Hymnus",
             [
@@ -148,5 +151,12 @@ invariants = {
                 ],
             ],
         ),
+        "benedicamus domino": Responsory(
+            [("V.", "Benedicámus Dómino."), ("R.", "Deo grátias.")]
+        ),
+        "pretiosa": Responsory(
+            [("V.", "Pretiósa in conspéctu Dómini."), ("R.", "Mors Sanctórum ejus.")]
+        ),
+        "benedicite": Responsory([("V.", "Benedicite."), ("R.", "Deus.")]),
     }
 }

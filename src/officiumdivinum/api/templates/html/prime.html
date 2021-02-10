@@ -1,5 +1,5 @@
 <article lang={{obj.language}}>
-  <h2>{{object.name}}</h2>
+  <h2>{{obj.name}}</h2>
 
   {{obj.introit.html()|safe}}
 
@@ -29,7 +29,7 @@
   {{ obj.invariants["pretiosa"].html()|safe }}
   {{ obj.invariants["sancta maria et omnes"].html()|safe }}
   {% for i in range(3) %}
-  {{obj.invariants["deus in adjutorium"]}}
+  {{obj.invariants["deus in adjutorium"].html()|safe}}
   {% endfor %}
   {{ obj.invariants["kyrie"]|markdown }}
   {{ obj.invariants["pater"].html()|safe }}
@@ -37,7 +37,7 @@
   {{ obj.invariants["gloria"].html()|safe }}
   {{ obj.invariants["oremus"]|markdown }}
   {{ obj.invariants["dirigere et sanctificare"].html()|safe }}
-  {{ obj.invariants["iube domipne"].html()|safe }}
+  {{ obj.invariants["iube domine"].html()|safe }}
   {{ obj.invariants["dies et actus"].html()|safe }}
 
   {{ obj.chapter.html()|safe }}

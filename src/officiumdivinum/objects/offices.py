@@ -26,4 +26,6 @@ class Prime(Renderable):  # use a custom base class if need be
     martyrology: Martyrology
     chapter: Reading
     invariants: Dict
-    template = "prime.html"
+    template = "prime"
+    liturgical_day: str = None
+    calendar_day: str = None

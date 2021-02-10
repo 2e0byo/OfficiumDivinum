@@ -11,8 +11,8 @@ from .api import api
 from .renderers import objectHTMLRenderer
 
 
-@set_renderers(JSONRenderer, objectHTMLRenderer)
 @api.route("/office", methods=["GET"])
+@set_renderers(JSONRenderer, objectHTMLRenderer)
 def get_office():
     args = request.args
 

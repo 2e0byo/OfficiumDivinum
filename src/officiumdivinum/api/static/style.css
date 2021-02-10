@@ -1,13 +1,163 @@
-verse-no {
-    font-size: 50%;
-    color: red;
-    vertical-align: super;
+@import url("./fonts.css");
+
+body {
+		height: 100vh;
+		font-family: 'CharisSILW';
+	}
+	
+:root {
+  color-scheme: light dark; /* both supported */
 }
-chapter-no::after {
-    content: ":"
+
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #343434;
+		color: #fff;
+	}
+	
+	nav img {
+		filter: invert(100%);
+	}
+	
 }
-chapter-no {
-    font-size: 50%;
-    color: red;
-    vertical-align: super;
+
+body {
+	display: grid;
+	grid-template-areas:	'header  nav'
+							'main  main'
+							'separator separator'
+							'footer  footer';
+	grid-template-columns:	auto 1fr;
+	grid-template-rows: 	auto auto;
+	
+	line-height: 1.6;
+	
 }
+
+* {
+	box-sizing: border-box;
+}
+
+/* Typographic styling */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'libre_caslon_displayregular';
+}
+
+p {
+	text-align: justify;
+	vertical-align: baseline;
+	hyphens: auto;
+	-webkit-hyphens: auto;
+}
+
+.versenumber {
+	color: red;
+	display: inline-block;
+	margin-right: 1ch;
+}
+
+.rubric {
+	display: inline-block;
+	float: right;
+	max-width: 20ch;
+	text-align: right;
+	font-size: 0.8em;
+	color: red;
+	font-style: italic;
+	margin: 0px 0px 0px 1.5rem;
+}
+
+.inline-rubric {
+	color: red;
+	font-style: italic;
+}
+
+p.lectio::first-letter {
+	initial-letter: 2;
+	-webkit-initial-letter: 2;
+	color: red;
+}
+
+p.oratio::first-letter {
+	initial-letter: 2;
+	-webkit-initial-letter: 2;
+}
+
+article h2 {
+	text-align: center;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	width: 75%;
+	margin: auto;
+}
+
+
+/* layout etc */
+
+div.mainheader {
+	grid-area: header;
+}
+
+.mainheader {
+	vertical-align: baseline;
+}
+
+div.mainheader > h1, div.mainheader > h2 {
+	width: 100%;
+	margin: 0px 0px 1rem 1rem;
+	padding: 0px;
+}
+
+
+article {
+	width: 80vw;
+	max-width: 65ch;
+	margin: 0px auto;
+}
+
+nav {
+	grid-area: nav;
+}
+
+nav img {
+	float:right;
+}
+
+#main {
+	grid-area: main;
+	overflow-y: scroll;
+}
+
+
+
+#translation {
+	grid-area: translation;
+	height: 20vh;
+	overflow-y: scroll;
+	margin-bottom: 2rem;
+	/*Why is this not showng up? */
+}
+
+
+footer {
+	grid-area: footer;
+}
+
+#translation-separator {
+	margin: 2vh 0px 2vh 0px auto;
+	width: 80vw;
+	border-top: 1px solid #000;
+	height: 1px;
+	cursor: n-resize;
+	grid-area: separator;
+}
+
+
+
+
+#mainheader, nav, #main, footer {
+	  padding: 1rem;
+}
+	

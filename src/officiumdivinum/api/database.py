@@ -3,6 +3,7 @@ Handle database querying.
 
 By abstracting it here we can just use dicts for testing.
 """
+import copy
 from datetime import timedelta
 from pathlib import Path
 from typing import Union
@@ -96,15 +97,6 @@ def assemble_martyrology(candidates: list, year: int):
 
     year : int : year.
 
-    candidates : list :
-
-    year : int :
-
-    candidates: list :
-
-    year: int :
-
-
     Returns
     -------
     """
@@ -112,9 +104,14 @@ def assemble_martyrology(candidates: list, year: int):
     for candidate in candidates:
         try:
             old_date, content = candidate.render(year)
+            template = copy.copy(candidate)
         except AttributeError:
             extra_info += candidate.content
-    return old_date, extra_info + content
+
+    print(template)
+    template.content = extra_info + content
+    template.year = year
+    return template
 
 
 def raw_query(day, table):
@@ -170,7 +167,7 @@ def init():
 
 
 def get_psalm(psalm, language, start=None, stop=None):
-    psalm = raw_tables["psalms"][language]
+    psalm = raw_tables["psalms"][language][f"Psalm{psalm}"]
     if not stop and not start:
         return psalm
     else:
@@ -239,10 +236,14 @@ def get_office(
             "Lectio Brevis",
             "2 Thess 3:5",
             [
-                "Dóminus autem dírigat corda et córpora nostra in caritáte Dei et patiéntia Christi."
+                datastructures.StrObj(
+                    "Dóminus autem dírigat corda et córpora nostra in caritáte Dei et patiéntia Christi."
+                )
             ],
         ),
         inv,
     )
+    office.liturgical_day = "Feria Quarta"
+    office.calendar_day = "10 Februarius MMXXI"
 
     return office

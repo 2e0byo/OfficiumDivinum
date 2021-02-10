@@ -1,6 +1,101 @@
-{% extends 'base.html' %}
+{% include "html/icon.html" %}
 
-{% block header %}
-<h1>{% block title%}{% endblock %}</h1>
-{% endblock %}
+<!doctype html>
+<html lang="la">
+  <head>
+    <meta charset="utf-8">
+    <title>{{page["title"]}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename="style.css") }} media="screen" />
+    <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="./js/js.cookie.min.js"></script>
+  </head>
+  <body>
+    <div class="mainheader">
+      <h1>{{page["liturgical_day"]}}</h1>
+      <h2>{{page["calendar_day"]}}</h2>
+    </div>
+    
+    <nav>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" alt="Menu" height="16"/>
+      
+    </nav>
+    
+    <div id="main">
+      {{ content|safe }}
+    </div>
+
+    {% if translation %}
+      <hr id="translation-separator" />
+      
+      <footer>
+	<div id="translation">
+	  {{ translation|safe }}
+	</div>
+      </footer>
+    {% endif %}
+
+    <script>
+      
+      if(Cookies.get("officiumdivinum_settings") != null) {
+      var usersettings = $.parseJSON(Cookies.get("officiumdivinum_settings"));
+      $("footer").height(usersettings.footerheight);
+      $("#translation").height(usersettings.translationheight);
+      }
+
+      var $divs = $('#main, #translation');
+      var sync = function(e){
+      var $other = $divs.not(this).off('scroll'), other = $other.get(0);
+      var percentage = this.scrollTop / (this.scrollHeight - this.offsetHeight);
+      other.scrollTop = percentage * (other.scrollHeight - other.offsetHeight);
+      setTimeout( function(){ $other.on('scroll', sync ); },10);
+      }
+      $divs.on( 'scroll', sync);
+      
+      $(function(){
+      $("article[lang='la']").attr("lang", "it"); //this is a hack to force hyphenation rules
+      });
+      
+      
+      /* Resizable div */
+      var hr = null;
+      $("#translation-separator").mousedown(function(e) {
+      hr = {
+      y : e.pageY,
+      p : $("#main"),
+      n : $("footer"),
+      t : $("#translation"),
+      ph: $("#main").height(),
+      nh: $("footer").height(),
+      nt: $("#translation").height()
+      };
+      e.preventDefault();
+      });
+      $(document).mousemove(function(e) {
+      if(hr) {
+      hr.p.height(hr.ph+(e.pageY - hr.y));
+      hr.n.height(hr.nh-(e.pageY - hr.y));
+      hr.t.height(hr.nt-(e.pageY - hr.y));
+      }
+      e.preventDefault();
+      }).mouseup(function(e) {
+      var usersettings = {footerheight: hr.t.height(), translationheight: hr.n.height()}
+      
+      if(Cookies.get("officiumdivinum_settings") != null) {
+      Cookies.remove("officiumdivinum_settings");
+      }
+      Cookies.set("officiumdivinum_settings", JSON.stringify(usersettings),  { expires: 28 });
+      
+      hr = null;
+      e.preventDefault();
+      });
+      
+
+    </script>
+    <noscript>Ad maioram gloriam Dei permitte usum IavaScripti in indagatore tuo.</noscript>
+
+
+  </body>
+</html>
 

@@ -43,11 +43,17 @@ class Renderable:
 
 
 @dataclass
+class StrObj(Renderable):
+    content: str
+    template = "string"
+
+
+@dataclass
 class Hymn(Renderable):
     """Class to represent a hymn."""
 
     name: str
-    verses: List[List[str]]
+    content: List[List[str]]
     template = "hymn"
 
 
@@ -261,7 +267,7 @@ class MartyrologyInfo:
 
 
 @dataclass
-class Martyrology:
+class Martyrology(Renderable):
     """Class to represent the martyrology for a given day."""
 
     date: Date
@@ -269,6 +275,7 @@ class Martyrology:
     content: List
     ordinals: List = None
     moonstr: str = " Luna {ordinal} Anno Domini {year}"
+    template = "martyrology"
 
     def __post_init__(self):
         if not self.ordinals:
@@ -311,6 +318,10 @@ class Martyrology:
         # may need to abstract this to handle translations
         return old_date, self.content
 
+    def html(self):
+        self.old_date, self.content = self.render(self.year)
+        super().html()
+
 
 @dataclass
 class Verse(Renderable):
@@ -340,7 +351,7 @@ class Reading(Renderable):
 
     name: str
     ref: str
-    content: List[Union[Verse, str]]
+    content: List[Union[Verse, StrObj]]
     description: str = None
     template = "reading"
 
@@ -411,7 +422,7 @@ class Incipit(Renderable):
 class Collect(Renderable):
     """Class to represent a collect."""
 
-    collect: str
+    content: str
     termination: str
     template = "collect"
 
