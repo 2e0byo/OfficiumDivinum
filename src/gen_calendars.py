@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from officiumdivinum.parsers import P2obj
 from officiumdivinum.parsers.run_parser import pokemon_to_json
 
 things = list(
@@ -7,6 +8,7 @@ things = list(
         "Latin", "1960", "~/code/office-generator/divinumofficium/DO_web/www/horas"
     )
 )
+
 
 fns = ("sanctoral", "temporal", "martyrology")
 

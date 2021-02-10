@@ -3,10 +3,10 @@ from flask import request
 from flask_api.decorators import set_renderers
 from flask_api.renderers import BrowsableAPIRenderer
 from flask_api.renderers import JSONRenderer
-from renderers import objectHTMLRenderer
 
 from ..bible import Vulgate
 from .api import api
+from .renderers import objectHTMLRenderer
 
 # from .errors import InvalidInput
 

@@ -4,11 +4,11 @@ Translations of invariant bits.
 In the long run these should be serialised into the database and read
 out at object creation.
 """
-from .datastructures import Blessing
-from .datastructures import Collect
-from .datastructures import Hymn
-from .datastructures import Reading
-from .datastructures import Responsory
+from ..objects.datastructures import Blessing
+from ..objects.datastructures import Collect
+from ..objects.datastructures import Hymn
+from ..objects.datastructures import Reading
+from ..objects.datastructures import Responsory
 
 invariants = {
     "latin": {
@@ -150,5 +150,3 @@ invariants = {
         ),
     }
 }
-
-psalms[]

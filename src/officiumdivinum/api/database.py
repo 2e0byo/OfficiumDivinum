@@ -9,11 +9,10 @@ from typing import Union
 
 import dateutil.parser as dp
 import jsonpickle
-from translations import invariants
 
-from ..objects import Office
 from ..objects import Prime
 from ..objects import datastructures  # needed for unpickling.
+from .translations import invariants
 
 martyrology = []
 
@@ -153,9 +152,6 @@ def init():
     load_martyrology()
 
 
-offices = {"prime": Prime}
-
-
 def get_psalm(psalm, language):
     pass
 
@@ -166,7 +162,7 @@ def get_office(
     datestr: str,
     language: str,
     translation: Union[str, None],
-) -> Office:
+):
     """
     Get a particular office by calendar date.
 
@@ -207,7 +203,8 @@ def get_office(
         martyrology_query(tomorrow, "martyrology"),
         datastructures.Reading(
             "Lectio Brevis",
-            "2 Thess 3:5"[
+            "2 Thess 3:5",
+            [
                 "Dóminus autem dírigat corda et córpora nostra in caritáte Dei et patiéntia Christi."
             ],
         ),
