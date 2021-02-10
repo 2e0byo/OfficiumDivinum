@@ -1,8 +1,14 @@
-officiumdivinum.api package
-===========================
+API Reference
+=============
 
-Submodules
+
+Office Api
 ----------
+
+.. automodule:: officiumdivinum.api.office
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 officiumdivinum.api.api module
 ------------------------------
