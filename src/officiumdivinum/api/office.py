@@ -30,4 +30,4 @@ def get_office():
     if not calendar == "1962":
         abort(404)
 
-    return [database.get_office(office, calendar, date, language, translation)]
+    return database.get_office(office, calendar, date, language, translation)

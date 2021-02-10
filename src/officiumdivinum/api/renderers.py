@@ -19,10 +19,11 @@ class objectHTMLRenderer(BaseRenderer):
             page = None
 
         if page:
+            print(len(data))
             if len(data) == 2:
                 content, translation = data
-                content = " ".join([x.html() for x in content])
-                translation = " ".join([x.html() for x in translation])
+                content = content.html()
+                translation = translation.html()
             else:
                 content = " ".join([x.html() for x in data])
                 translation = None

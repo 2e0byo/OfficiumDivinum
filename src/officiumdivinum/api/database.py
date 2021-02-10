@@ -245,4 +245,9 @@ def get_office(
     office.liturgical_day = "Feria Quarta"
     office.calendar_day = "10 Februarius MMXXI"
 
-    return office
+    if translation:
+        translation = copy.copy(office)
+
+        return [office, translation]
+    else:
+        return [office]
