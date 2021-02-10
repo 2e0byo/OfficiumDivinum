@@ -10,48 +10,52 @@ Office Api
    :undoc-members:
    :show-inheritance:
 
-officiumdivinum.api.api module
-------------------------------
+Api provider
+------------
 
 .. automodule:: officiumdivinum.api.api
    :members:
    :undoc-members:
    :show-inheritance:
 
-officiumdivinum.api.bible module
---------------------------------
+Bible API
+---------
 
 .. automodule:: officiumdivinum.api.bible
    :members:
    :undoc-members:
    :show-inheritance:
 
-officiumdivinum.api.database module
------------------------------------
+API database functions
+----------------------
 
 .. automodule:: officiumdivinum.api.database
    :members:
    :undoc-members:
    :show-inheritance:
 
-officiumdivinum.api.martyrology module
---------------------------------------
+Martyrology API
+---------------
 
 .. automodule:: officiumdivinum.api.martyrology
    :members:
    :undoc-members:
    :show-inheritance:
 
-officiumdivinum.api.test\_api module
-------------------------------------
+Testpage API
+------------
 
 .. automodule:: officiumdivinum.api.test_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-officiumdivinum.api.update\_server module
------------------------------------------
+Update Server
+-------------
+
+This module is purely for testing and will be dropped before the final
+release.  It recieves a webhook from Github and triggers an update of
+the development server.
 
 .. automodule:: officiumdivinum.api.update_server
    :members:
