@@ -344,11 +344,21 @@ class Rubric(Renderable):
 
 
 @dataclass
+class Gloria(Renderable):
+    """Class to represent a gloria in any language."""
+
+    content: List[str]
+    template = "gloria"
+
+
+@dataclass
 class Psalm(Renderable):
     """Class to represent a psalm."""
 
     content: List[Verse]
     ref: str
+    gloria: Gloria
+    suppress_gloria: bool = None
     template = "psalm"
 
 
