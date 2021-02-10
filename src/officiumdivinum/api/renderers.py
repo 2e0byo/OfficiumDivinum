@@ -7,6 +7,17 @@ from .api import api
 
 
 class objectHTMLRenderer(BaseRenderer):
+    """
+    Renderer for objects with .html() methods.
+
+    This class is used to render objects: it can render any number of
+    objects with an `html()` method.  Additionally, if the request is
+    for a *page*, it wraps the output in a `page.html` template.  A
+    special case is where the backend returns exactly two objects. Then
+    we assume that one is a translation of the other, and return a page
+    with translation footer.
+    """
+
     media_type = 'text/html; charset="UTF-8"'
 
     def render(self, data, media_type, **options):
@@ -14,9 +25,14 @@ class objectHTMLRenderer(BaseRenderer):
         args = request.args
 
         try:
-            page = True if args["page"] else False
+            page = True if args["page"].lower() != "false" else False
         except KeyError:
             page = None
+
+        try:
+            page = False if args["part"] else page
+        except KeyError:
+            pass
 
         if page:
             print(len(data))

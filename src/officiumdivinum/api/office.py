@@ -1,4 +1,15 @@
-"""Endpoint to serve complete offices."""
+"""
+Endpoint to serve complete offices.
+
+This endpoint serves complete offices, and any legitimate bits of
+them.  Queries may be either in json or as html queries.  The response
+is negotiated according to the `Accept:` header of the request, and
+currently supports either `application/json` (for serialised objects)
+or `text/html` (for rendered objects).
+
+Note that requesting parts of an office automatically suppresses
+requesting a page.
+"""
 from datetime import datetime
 
 from flask import abort
@@ -30,4 +41,15 @@ def get_office():
     if not calendar == "1962":
         abort(404)
 
-    return database.get_office(office, calendar, date, language, translation)
+    things = database.get_office(office, calendar, date, language, translation)
+
+    parts = args.getlist("part")
+    if not parts:
+        return things
+
+    else:
+        disjointed_members = []
+        for part in parts:
+            for thing in things:
+                disjointed_members.append(getattr(thing, part))
+        return disjointed_members
