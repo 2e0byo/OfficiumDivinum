@@ -35,7 +35,9 @@ def get_office():
     if not office == "prime":
         abort(404)  # for now
     language = args["lang"] if "lang" in args.keys() else "latin"
-    translation = args["trans"] if "lang" in args.keys() else None
+    translation = (
+        args["trans"] if "lang" in args.keys() and "trans" in args.keys() else None
+    )
     date = args["date"] if "date" in args.keys() else str(datetime.now().date())
     calendar = args["calendar"] if "calendar" in args.keys() else "1962"
     if not calendar == "1962":
