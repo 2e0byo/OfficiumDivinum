@@ -29,7 +29,6 @@ invalid_date = "<title>Invalid date supplied</title>"
 @api.route("/martyrology/", methods=["GET"])
 def get_martyrology():
     args = request.args
-    print(args)
     try:
         day = dp.parse(args["date"])
     except KeyError:
@@ -42,12 +41,6 @@ def get_martyrology():
     except KeyError:
         pass
     return html_query(day, "martyrology")
-
-
-# @api.route("/jsonapi", methods=["GET"])
-# def json_api_query():
-#     query = request.get_json()
-#     if query["request"] == "martyrology"
 
 
 def html_query(day, table):
