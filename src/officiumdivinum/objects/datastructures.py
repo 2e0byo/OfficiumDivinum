@@ -36,10 +36,28 @@ Rank = None  # temporary var to allow circular classing....
 
 
 class Renderable:
-    """Base class for renderable objects."""
+    """
+    Base class for renderable objects.
+
+    Derived objects should set their `.template` attribute.  Be sure
+    actually to create the template (in `api/templates`) before calling
+    the method.
+    """
 
     def html(self):
+        """Render self as html."""
         return render_template(f"html/{self.template}.html", obj=self)
+
+    def latex(self):
+        """Render self as latex."""
+        return render_template(f"tex/{self.template}.tex", obj=self)
+
+    def gabc(self):
+        """Render self as gabc."""
+        return render_template(f"gabc/{self.template}.gabc", obj=self)
+
+    def DSL(self):
+        """Render self as dsl."""
 
 
 @dataclass
