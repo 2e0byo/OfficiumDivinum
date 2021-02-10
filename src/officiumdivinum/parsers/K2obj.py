@@ -82,7 +82,7 @@ def parse_line(line: str, calendar: str) -> Feast:
 
 def parse_file(fn: Path, calendar: str):
     """
-    Parse a divinumofficium caldnear file.
+    Parse a divinumofficium calendar file.
 
     Parameters
     ----------
