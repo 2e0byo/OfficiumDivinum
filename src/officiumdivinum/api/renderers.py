@@ -29,10 +29,9 @@ class objectHTMLRenderer(BaseRenderer):
         except KeyError:
             page = None
 
-        try:
-            page = False if args["part"] else page
-        except KeyError:
-            pass
+        # Force no page if it would make no sense
+        if any((args.getlist(x) for x in ("part", "getparts"))):
+            page = False
 
         if page:
             print(len(data))
@@ -51,5 +50,10 @@ class objectHTMLRenderer(BaseRenderer):
                 "html/page.html", content=content, translation=translation, page=page
             )
         else:
-            content = " ".join([x.html() for x in data])
+            content = ""
+            for thing in data:
+                try:
+                    content += thing.html()
+                except AttributeError:
+                    content += f" {thing} "
             return content

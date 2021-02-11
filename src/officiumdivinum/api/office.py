@@ -45,6 +45,9 @@ def get_office():
 
     things = database.get_office(office, calendar, date, language, translation)
 
+    if args.getlist("getparts"):
+        return list(things[0].__dict__.keys())
+
     parts = args.getlist("part")
     if not parts:
         return things
