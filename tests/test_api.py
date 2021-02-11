@@ -38,7 +38,7 @@ def object_parts(client, endpoint):
     resps = []
     for part in parts:
         url = endpoint + urlencode({"part": part})
-        resp = client.get(url)
+        resp = client.get(url).status
         print(resp)
         resps.append(resp)
 
@@ -54,16 +54,17 @@ def test_office_page(client):
     for lang in langs:
         url = endpoint + urlencode({"getobjs": "true"})
         resp = client.get(url, headers={"Accept": "application/json"})
+        resps.append(resp.status)
         offices = resp.json
         for office in offices:
             # test without page
             url = endpoint + urlencode({"office": office, "lang": lang})
-            resp = client.get(url)
+            resp = client.get(url).status
             resps.append(resp)
             resps += object_parts(client, url)
             # test with page
             url = endpoint + urlencode({"office": office, "lang": lang, "page": True})
-            resp = client.get(url)
+            resp = client.get(url).status
             resps.append(resp)
 
     # test all possible language pairs
@@ -71,7 +72,7 @@ def test_office_page(client):
         url = endpoint + urlencode(
             {"office": office, "lang": pair[0], "trans": pair[1], "page": True}
         )
-        resp = client.get(url)
+        resp = client.get(url).status
         resps.append(resp)
 
     assert all([x == "200 OK" for x in resps])
