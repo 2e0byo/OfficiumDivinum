@@ -13,10 +13,6 @@ from .office import get_partlist
 from .renderers import objectHTMLRenderer
 
 
-def init():
-    database.init()
-
-
 def json_query(day, table):
     old_date, martyrology = database.martyrology_query(day, table)
     return jsonify({"old_date": old_date, "content": martyrology})
@@ -44,12 +40,3 @@ def get_martyrology():
         return get_partlist(martyrology)
 
     return martyrology
-
-
-def main():
-    init()
-    api.run()
-
-
-if __name__ == "__main__":
-    main()

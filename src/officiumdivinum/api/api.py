@@ -16,3 +16,9 @@ def markdown_no_p(text):
 
 api = FlaskAPI(__name__)
 api.jinja_env.filters["markdown"] = markdown_no_p
+
+
+def init():
+    from . import database
+
+    database.init()

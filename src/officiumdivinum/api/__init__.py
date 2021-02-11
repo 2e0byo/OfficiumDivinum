@@ -1,3 +1,4 @@
+from .api import *  # noqa
 from .bible import get_verses  # noqa
 from .martyrology import *  # noqa
 from .office import *  # noqa
