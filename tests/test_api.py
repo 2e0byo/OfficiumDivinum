@@ -45,12 +45,16 @@ def object_parts(client, endpoint):
     return resps
 
 
-def test_office_page(client):
-    """Test office page."""
-    offices = ["prime"]
-    langs = ["latin"]
+def object_endpoint(client, endpoint):
+    """Test any endpoint which conforms to the object standard."""
     resps = []
-    endpoint = "/office?"
+    endpoint += "?"
+
+    url = endpoint + urlencode({"getlangs": True})
+    resp = client.get(url, headers={"Accept": "application/json"})
+    resps.append(resp.status)
+    langs = resp.json
+
     for lang in langs:
         url = endpoint + urlencode({"getobjs": "true"})
         resp = client.get(url, headers={"Accept": "application/json"})
@@ -76,3 +80,7 @@ def test_office_page(client):
         resps.append(resp)
 
     assert all([x == "200 OK" for x in resps])
+
+
+def test_office_endpoint(client):
+    object_endpoint(client, "/office")

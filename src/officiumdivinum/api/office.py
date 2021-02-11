@@ -36,9 +36,13 @@ def get_office():
     args = request.args
 
     offices = ["prime"]
+    langs = ["latin"]
 
-    if args.getlist("getobjs") and args.getlist("getobjs"):
+    if args.getlist("getobjs"):
         return offices
+
+    if args.getlist("getlangs"):
+        return langs
 
     try:
         office = args["office"]
@@ -49,6 +53,9 @@ def get_office():
         abort(404)
 
     language = args["lang"] if "lang" in args.keys() else "latin"
+    if language not in langs:
+        abort(404)
+
     translation = (
         args["trans"] if "lang" in args.keys() and "trans" in args.keys() else None
     )
