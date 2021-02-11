@@ -6,11 +6,10 @@ from flask import jsonify
 from flask import request
 from flask_api.decorators import set_renderers
 from flask_api.renderers import JSONRenderer
-from jinja2 import Environment
-from jinja2 import PackageLoader
 
 from . import database
 from .api import api
+from .office import get_partlist
 from .renderers import objectHTMLRenderer
 
 
@@ -42,9 +41,12 @@ def get_martyrology():
     except KeyError:
         pass
 
-    martyrology = database.martyrology_query(day, "martyrology")
-    print(martyrology.html())
-    return [martyrology]
+    martyrology = [database.martyrology_query(day, "martyrology")]
+
+    if args.getlist("getparts"):
+        return get_partlist(martyrology)
+
+    return martyrology
 
 
 def main():
