@@ -31,9 +31,9 @@ Overview
     :alt: Requirements Status
     :target: https://requires.io/github/OfficiumDivinum/OfficiumDivinum/requirements/?branch=master
 
-.. |coveralls| image:: https://coveralls.io/repos/OfficiumDivinum/OfficiumDivinum/badge.svg?branch=master&service=github
+.. |coveralls| image:: https://coveralls.io/repos/github/OfficiumDivinum/OfficiumDivinum/badge.svg?branch=master
     :alt: Coverage Status
-    :target: https://coveralls.io/r/OfficiumDivinum/OfficiumDivinum
+    :target: https://coveralls.io/github/OfficiumDivinum/OfficiumDivinum?branch=master
 
 .. |codacy| image:: https://img.shields.io/codacy/grade/93ba847130a24c3eb555404b8df8f74d.svg
     :target: https://www.codacy.com/app/OfficiumDivinum/OfficiumDivinum
