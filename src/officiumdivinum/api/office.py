@@ -22,6 +22,14 @@ from .api import api
 from .renderers import objectHTMLRenderer
 
 
+def get_partlist(things):
+    """Get list of parts of any object."""
+    partlist = []
+    for thing in things:
+        partlist += list(thing.__dict__.keys())
+    return partlist
+
+
 @api.route("/office", methods=["GET"])
 @set_renderers(JSONRenderer, objectHTMLRenderer)
 def get_office():
@@ -46,7 +54,7 @@ def get_office():
     things = database.get_office(office, calendar, date, language, translation)
 
     if args.getlist("getparts"):
-        return list(things[0].__dict__.keys())
+        return get_partlist(things)
 
     parts = args.getlist("part")
     if not parts:
