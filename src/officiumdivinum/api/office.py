@@ -35,13 +35,19 @@ def get_partlist(things):
 def get_office():
     args = request.args
 
+    offices = ["prime"]
+
+    if args.getlist("getobjs") and args.getlist("getobjs"):
+        return offices
+
     try:
         office = args["office"]
     except KeyError:
         abort(400)
 
-    if not office == "prime":
-        abort(404)  # for now
+    if office not in offices:
+        abort(404)
+
     language = args["lang"] if "lang" in args.keys() else "latin"
     translation = (
         args["trans"] if "lang" in args.keys() and "trans" in args.keys() else None
