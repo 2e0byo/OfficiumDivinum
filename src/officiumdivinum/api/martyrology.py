@@ -25,7 +25,7 @@ def json_query(day, table):
 invalid_date = "<title>Invalid date supplied</title>"
 
 
-@api.route("/martyrology/", methods=["GET"])
+@api.route("/martyrology", methods=["GET"])
 @set_renderers(JSONRenderer, objectHTMLRenderer)
 def get_martyrology():
     args = request.args

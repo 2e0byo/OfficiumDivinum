@@ -16,7 +16,7 @@ Get tomorrow’s martyrology as json:
 
 .. code:: bash
 
-   curl -H "Accept: application/json" --request GET "http://2e0byo.pythonanywhere.com:/martyrology/"
+   curl -H "Accept: application/json" --request GET "http://2e0byo.pythonanywhere.com:/martyrology"
 
 Get the hymn from today’s Prime in latin in html:
 
