@@ -53,5 +53,9 @@ def get_office():
         disjointed_members = []
         for part in parts:
             for thing in things:
-                disjointed_members.append(getattr(thing, part))
+                obj = getattr(thing, part)
+                if not isinstance(obj, list):
+                    disjointed_members.append(getattr(thing, part))
+                else:
+                    disjointed_members += obj
         return disjointed_members
