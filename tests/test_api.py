@@ -71,13 +71,14 @@ def object_endpoint(client, endpoint):
             resp = client.get(url).status
             resps.append(resp)
 
-    # test all possible language pairs
-    for pair in combinations(langs, 2):
-        url = endpoint + urlencode(
-            {"office": office, "lang": pair[0], "trans": pair[1], "page": True}
-        )
-        resp = client.get(url).status
-        resps.append(resp)
+    for office in offices:
+        # test all possible language pairs
+        for pair in combinations(langs, 2):
+            url = endpoint + urlencode(
+                {"office": office, "lang": pair[0], "trans": pair[1], "page": True}
+            )
+            resp = client.get(url).status
+            resps.append(resp)
 
     assert all([x == "200 OK" for x in resps])
 
