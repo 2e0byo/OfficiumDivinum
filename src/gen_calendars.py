@@ -1,6 +1,6 @@
 from pathlib import Path
 
-rom officiumdivinum.parsers.run_parser import pokemon_to_json
+from officiumdivinum.parsers.run_parser import pokemon_to_json
 
 things = list(
     pokemon_to_json(
