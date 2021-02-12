@@ -196,7 +196,7 @@ def dsl_parser(datestr: str, year: int) -> date:
     _betweens = between[...]
     _betweens += _timedeltas
     count = 0
-    while any([x in datestr for x in ("after", "before", "between")]):
+    while any(x in datestr for x in ("after", "before", "between")):
         datestr = _betweens.transformString(datestr)
         if count > 10:
             raise DSLError(f"Recursion limit reached, got as far as {datestr}")
