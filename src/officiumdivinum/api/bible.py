@@ -42,8 +42,6 @@ def get_verses():
         verses = []
         try:
             for book, chapter, verse in query["verses"]:
-                chapter = chapter
-                verse = verse
                 verses.append(bible.content[book][chapter][verse])
         except KeyError:
             pass
