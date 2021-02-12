@@ -18,7 +18,7 @@ def json_query(day, table):
     return jsonify({"old_date": old_date, "content": martyrology})
 
 
-@api.route("/martyrology", methods=["GET"])
+@api.route("/martyrology/", methods=["GET"])
 @set_renderers(JSONRenderer, objectHTMLRenderer)
 def get_martyrology():
     args = request.args
