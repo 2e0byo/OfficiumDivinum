@@ -80,7 +80,7 @@ def object_endpoint(client, endpoint):
             resp = client.get(url).status
             resps.append(resp)
 
-    assert all([x == "200 OK" for x in resps])
+    assert all(x == "200 OK" for x in resps)
 
 
 def test_office_endpoint(client):

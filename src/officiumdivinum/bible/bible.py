@@ -8,7 +8,8 @@ class Bible:
         self.version = version
         self.content = DotMap()
 
-    def _parse_ref(self, ref: str):
+    @staticmethod
+    def _parse_ref(ref: str):
         """Convert ref into book, chapter and verse."""
         book, chapter, verse = re.search(r"([0-9]*.+?)([0-9]+):([0-9]+)", ref).groups()
         chapter = int(chapter)
