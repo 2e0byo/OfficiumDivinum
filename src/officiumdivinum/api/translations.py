@@ -34,7 +34,7 @@ invariants = {
                     "Sicut erat in principio, et nunc et semper *"
                     "et in saecula saeculorum.  Amen.",
                 ),
-                ("R." "Christe, Fili Dei vivi, * miserére nobis."),
+                ("R.", "Christe, Fili Dei vivi, * miserére nobis."),
             ]
         ),
         "exurge christe per annum": Responsory(
@@ -111,7 +111,7 @@ invariants = {
         "deus in adjutorium": Responsory(
             [
                 ("V.", "Deus + in adjutórium meum inténde."),
-                ("R." "Dómine, ad adjuvándum me festína."),
+                ("R.", "Dómine, ad adjuvándum me festína."),
             ]
         ),
         "laus tibi": StrObj("Laus tibi, Dómine, Rex ætérnæ glóriæ."),
