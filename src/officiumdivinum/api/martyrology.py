@@ -8,7 +8,7 @@ from flask_api.decorators import set_renderers
 from flask_api.renderers import JSONRenderer
 
 from . import database
-from .api import api
+from .api import app
 from .office import get_partlist
 from .renderers import objectHTMLRenderer
 
@@ -18,7 +18,7 @@ def json_query(day, table):
     return jsonify({"old_date": old_date, "content": martyrology})
 
 
-@api.route("/martyrology/", methods=["GET"])
+@app.route("/martyrology/", methods=["GET"])
 @set_renderers(JSONRenderer, objectHTMLRenderer)
 def get_martyrology():
     args = request.args

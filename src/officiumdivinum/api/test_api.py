@@ -1,11 +1,11 @@
 from pathlib import Path
 
-from .api import api
+from .api import app
 
-testpage = Path(api.root_path) / "static/test.html"
+testpage = Path(app.root_path) / "static/test.html"
 
 
-@api.route("/")
+@app.route("/")
 def test_api_page():
     with testpage.open() as f:
         data = f.read()

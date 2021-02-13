@@ -15,7 +15,7 @@ import git
 from flask import abort
 from flask import request
 
-from .api import api
+from .api import app
 
 try:
     w_secret = os.environ["WEBHOOK_SECRET"]
@@ -31,7 +31,7 @@ def is_valid_signature(x_hub_signature, data, private_key):
     return hmac.compare_digest(mac.hexdigest(), github_signature)
 
 
-@api.route("/update_server", methods=["POST"])
+@app.route("/update_server", methods=["POST"])
 def webhook():
     if request.method != "POST":
         return "OK"

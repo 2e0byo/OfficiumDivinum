@@ -30,7 +30,7 @@ def get_partlist(things):
     return partlist
 
 
-@api.route("/office", methods=["GET"])
+@app.route("/office", methods=["GET"])
 @set_renderers(JSONRenderer, objectHTMLRenderer)
 def get_office():
     args = request.args

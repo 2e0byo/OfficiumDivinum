@@ -5,7 +5,7 @@ from flask_api.renderers import BrowsableAPIRenderer
 from flask_api.renderers import JSONRenderer
 
 from ..bible import Vulgate
-from .api import api
+from .api import app
 from .renderers import objectHTMLRenderer
 
 # from .errors import InvalidInput
@@ -13,7 +13,7 @@ from .renderers import objectHTMLRenderer
 versions = {"vulgate": Vulgate("Sixto-Clementine Vulgate")}
 
 
-@api.route("/bible/", methods=["Get"])
+@app.route("/bible/", methods=["Get"])
 @set_renderers(JSONRenderer, objectHTMLRenderer, BrowsableAPIRenderer)
 def get_verses():
 

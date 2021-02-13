@@ -2,7 +2,7 @@ import flask
 
 
 def render_template(template, **kwargs):
-    from ..api.api import api
+    from ..api.api import app
 
-    with api.app_context(), api.test_request_context():
+    with app.app_context(), app.test_request_context():
         return flask.render_template(template, **kwargs)
