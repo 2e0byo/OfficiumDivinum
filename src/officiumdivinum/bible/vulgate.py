@@ -3,7 +3,6 @@ from re import search
 
 from dotmap import DotMap
 
-from ..api.api import app
 from ..objects import Verse
 from .bible import Bible
 
@@ -39,7 +38,7 @@ class Vulgate(Bible):
                     )
         self.content[book_name] = book
 
-    def load(self):
+    def load(self, app):
         """
         Load content.
 
