@@ -36,10 +36,10 @@ def create_app(test_config=None):
     else:
         app.config.from_mapping(test_config)
 
-    try:
-        Path(app.instance_path).mkdir()
-    except FileExistsError:
-        pass
+    with Path("/tmp/instance").open("w") as f:
+        f.write(app.instance_path)
+
+    Path(app.instance_path).mkdir(parents=True, exist_ok=True)
 
     from . import database
 
